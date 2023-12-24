@@ -1,0 +1,8 @@
+1. JVM,JDK,JRE (How does it work)
+2. Features of Java
+3. Data Types,variables, access modifiers, Basic Syntax and rules
+4. Conditional statements , Loops
+5. Methods/Functions
+6. Arrays, 2D Arrays
+7. String, StringBuilder
+8. Concept of Garbage collections

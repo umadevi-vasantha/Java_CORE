@@ -1,0 +1,231 @@
+1.Why do we need programming Languages ::
+==============================================
+
+Computers operate using machine language, which consists of binary code (0s and 1s).
+Writing a binary code will be a tedious job.Programming languages provide a human-readable , enabling programmers to communicate instructions to computers more effectively.
+
+Java is one of the Programming language
+
+Important Features of Java
+1. Object Oriented Design:
+	The object-oriented nature of Java promotes code reusability, maintainability, and scalability. It encourages modular and organized code structures.
+2. Platform Independent: WORA "Write Once Run Anywhere"
+	Java's platform independence allows developers to write code on one platform and run it on any other platform with a compatible JVM. This reduces development and deployment complexities.
+3. Large Ecosystem: Java has an extensive ecosystem of libraries, frameworks, and tools that facilitate development.
+	 This includes popular frameworks like Spring for enterprise applications and Hibernate for database interaction.
+4. Versatility: Java is used in a wide range of applications, from web development (Java EE) to mobile application development (Android), and from enterprise applications to scientific and research projects.
+
+
+2. How Java Program run and executes , what makes Java Platform Independent:
+========================================================
++--------------------------------------------------------+
+|                      Start: Write Code                 |
++--------------------------------------------------------+
+                               |
+                               V
++--------------------------------------------------------+
+|                      Write Java Code                    |
+|                    (e.g., YourProgram.java)             |
++--------------------------------------------------------+
+                               |
+                               V
++--------------------------------------------------------+
+|                    Save the Java Code                   |
+|                    (YourProgram.java)                   |
++--------------------------------------------------------+
+                               |
+                               V
++--------------------------------------------------------+
+|                   Compile the Code                     |
+|                (javac YourProgram.java)                 |
++--------------------------------------------------------+
+                               |
+                               V
++-------------------+--------------------------+-----------------------+
+|                   |                          |                       |
+|                   V                          V                       V
+|      +-------------------------+     +-----------------+     +-------------------+
+|      |  Java Compiler (javac) |     |   Java API      |     |  Java Debugger    |
+|      +-------------------------+     +-----------------+     +-------------------+
+|                          |                          |                       |
+|                          V                          V                       V
+|         +---------------------+            +-----------------+     +-------------------+
+|         |  Generate Bytecode  |            | Java Archive    |     | Java Documentation|
+|         | (YourProgram.class) |            |   Tool (jar)    |     |   Generator       |
+|         +---------------------+            +-----------------+     +-------------------+
+|                          |                          |                       |
+|                          V                          V                       V
+|         +---------------------+            +-----------------+     +-------------------+
+|         |      Run the Java   |            |    Classpath    |     |     Java Virtual   |
+|         |      Program (java) |            |   Configuration |     |    Machine (JVM)   |
+|         +---------------------+            +-----------------+     +-------------------+
+|                          |                          |                       |
+|                          V                          V                       V
+|         +---------------------+            +-----------------+     +-------------------+
+|         | JVM Execution (Interpret |            |   Runtime       |     |   Java Native     |
+|         |        or JIT Compilation)|          | Libraries (JRE) |     |   Interface (JNI) |
+|         +---------------------+            +-----------------+     +-------------------+
+|                |                       |                |                   |
+|                V                       V                V                   |
+|         +---------------------+     +-----------------+     +-------------------+
+|         | Runtime Data Areas  |     |   Execution    |     |   Security        |
+|         |  - Method Area      |     |   Engine        |     |   Manager         |
+|         |  - Heap             |     +-----------------+     +-------------------+
+|         |  - Stack            |
+|         |  - PC (Program Counter)|
+|         +---------------------+
+|                |                       |
+|                V                       |
+|         +---------------------+     +-----------------+     +-------------------+
+|         | Class Loader        |     |   JVM Compiler  |     |   JVM Interpreter  |
+|         |  - Load Classes     |     +-----------------+     +-------------------+
+|         |    into JVM         |
+|         +---------------------+
+|                |                       |
+|                V                       |
+|         +---------------------+     +-----------------+     +-------------------+
+|         | Bytecode Verifier   |     |   JIT Compiler  |     |   Execution Engine |
+|         |  - Verify bytecode  |     +-----------------+     +-------------------+
+|         +---------------------+
+|                |                       |
+|                V                       |
+|         +---------------------+     +-----------------+     +-------------------+
+|         | Interpreter         |     | Native Code     |     |   Garbage Collector|
+|         |  - Interpret        |     |   Generator     |     +-------------------+
+|         +---------------------+
+|                |                       |
+|                V                       |
+|         +---------------------+     +-----------------+
+|         | JIT Compiler        |     | Execution Engine|
+|         |  - Compile bytecode  |     |  - Execute native|
+|         |    to native code    |     |    machine code  |
+|         +---------------------+     +-----------------+
+|                |                       |
+|                V                       |
+|         +---------------------+     +-----------------+
+|         | Execution Engine    |     |   Runtime Data  |
+|         |  - Execute native    |     |   Areas Cleanup|
+|         |    machine code      |     +-----------------+
+|         +---------------------+
+|                          |
+|                          V
++--------------------------------------------------------+
+|                 Output and Termination                  |
++--------------------------------------------------------+
+                               |
+                               V
++--------------------------------------------------------+
+|                   End: Program Finishes                 |
++--------------------------------------------------------+
+
+====================================================================
+
+1. Writing and Saving Java Code:
+	Write Java Code:
+	================
+	a.Developers write Java source code in a plain text file with a .java extension.
+	Save the Java Code:
+	==================
+	a.Save the source code file, e.g., YourProgram.java.
+2. Compiling the Code:
+	Java Compiler (javac):
+	======================
+	a.Takes the Java source code (YourProgram.java) and compiles it into bytecode.
+	Generates bytecode files, e.g., YourProgram.class.
+3. Running the Java Program:
+	Java Virtual Machine (JVM):
+	==========================
+	Class Loader:
+	a.Loads classes into the JVM as they are referenced during execution.
+	
+	Bytecode Verifier:
+	a.Verifies that the loaded bytecode adheres to the Java Virtual Machine Specification.
+	
+	Interpreter:
+	a.Interprets bytecode line by line and executes it.
+	
+	JIT Compiler (Just-In-Time):
+	a.Compiles bytecode into native machine code at runtime for improved performance.
+	
+	Execution Engine:
+	a.Executes the compiled native code generated by the JIT compiler.
+Runtime Data Areas:
+   Method Area (PermGen):
+   a. Stores class-level information, including field and method data.
+   
+   Heap:
+   b.Stores objects and is shared among all threads.
+   
+   Stack:
+   a. Each thread has its own stack, storing method call information and local variables.
+   
+   PC (Program Counter):
+   Keeps track of the currently executing instruction.
+4. Java Runtime Environment (JRE):
+
+   Runtime Libraries:
+   a.A collection of class libraries that provide essential functionalities for Java programs.
+   Includes packages like java.lang, java.util, etc.
+   
+   JVM Compiler and Interpreter:
+   
+   JVM Compiler:
+   a.Compiles bytecode into native code ahead of time (AOT).
+   
+   JVM Interpreter:
+   a.Interprets bytecode during program execution.
+   
+   Native Code Generator:
+   a. Generates native machine code from the compiled bytecode.
+   
+   Execution Engine:
+   a.Executes the native machine code generated by the JVM Compiler or Interpreter.
+   
+   Garbage Collector:
+   a.Manages memory by reclaiming resources from objects that are no longer in use.
+5. Output and Termination:
+	Output:
+	a. The Java program produces the desired output, which may include text printed to the console, graphical user interface interactions, or other forms of output.
+
+    Termination:
+    a.The program finishes its execution, and control returns to the operating system.
+6. End: Program Finishes:
+   End:
+   a. The Java program has completed its execution.
+
+=============================================================================
+Notes: Reference from Kunal Kushwaha
+More about platform independence
+
+- it means that byte code can run on all operating systems
+- We need to convert source code to machine code so computer can understand
+- Compiler helps in doing this by turning it into executable code
+- This executable code is set of instructions for the computer
+- After compiling c/c++ code we get .exe file which is platform dependent
+- In Java we get bytecode,JVM converts this to Machine code
+- Java is platfomr-independent but JVM is platform dependent.
+
+
+JDK (Java Development Kit) = JRE + Development Tools 
+	Provides environment to develop and run the java program.
+	It is a package that includes:
+	A. Development tools - to provide an environment to develop our program
+	B. JRE - to execute our program
+	C. a Compiler - Javac
+	D. Archiver - Jar
+	E. Docs generator - Javadoc
+	F. interpreter/ Loader
+	
+JRE (Java Run time Environment) = JVM + Library Class
+	It is an installation package that provides environment to only run the program
+	It consist of :
+	A. Deployment Technologies
+	B. User Interface ToolKits
+	C. Integration Libraries
+	D. Base Libraries
+	E. JVm
+	After we get .class file the next things happen at runtime
+	1. Class loader loads all the classes needed to execute the program
+	2. JVM sends code to Byte code verfiier to check the format of code
+
+
