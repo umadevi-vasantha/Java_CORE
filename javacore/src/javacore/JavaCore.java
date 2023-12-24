@@ -32,6 +32,7 @@ package javacore;
   	method name 'main method' in java is in convention declared as main always
   	c. String[] args - This is the parameter of the method, allowing you to pass command-line arguments to the program
   	command line arguments 
+  	
  */
 
 public class JavaCore {
