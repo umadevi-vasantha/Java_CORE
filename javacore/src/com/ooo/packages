@@ -1,0 +1,44 @@
+Packages :
+1. Packages is a way to organize related classes and interfaces into a single name-space. Its provides a mechanism for grouping related types,making the code
+more modular,maintainable , and easier to manage
+2. Packages act as container for classes, interfaces, enums and Other packages , helping to avoid naming conflicts between classes from different sources.
+3. Packages promote modularity by organizing code into logical units, making it easier to locate and manage classes within a project.
+4. By using packages , you can encapsulate related classes together and you can also hide the implementation details of classes by using package-private access
+5. Packages facilitate code reuse and distribution. You can create reusable libraries or components packaged into JAR files , which can be easily shared and reused in different projects
+
+Why we need Packages :
+1. Organization:
+Packages help to organize large code-bases by grouping related classes and interfaces together
+2. Avoid Naming conflicts
+Packages provide a way to avoid naming conflicts by encapsulating classes within a name-space
+3. Access control:
+Packages enable access control, allowing you to define the visibility of classes and members within the same package or across different packages
+4. Modularity:
+Packages promote modularity, making it easier to maintain and extend code as projects grow
+
+5. Code Reusability:
+Packages support code reusability by encapsulating functionality into libraries that can shared across projects
+
+
+The following statement creates a package called MyPackage: package MyPackage;
+
+Java uses file system directories to store packages. For example, the .class files for any classes you declare to be
+part of MyPackage must be stored in a directory called MyPackage. Remember that case is significant, and the directory
+name must match the package name exactly.
+
+A package hierarchy must be reflected in the file system of your Java development system.
+For example, a package declared as
+
+    package java.awt.image;
+
+needs to be stored in java\awt\image in a Windows environment. Be sure to choose your package names carefully.
+You cannot rename a package without renaming the directory in which the classes are stored.
+
+How does the Java run-time system know where to look for packages that you create? The answer has three parts.
+- First, by default, the Java run-time system uses the current working directory as its starting point.
+Thus, if your package is in a subdirectory of the current directory, it will be found.
+- Second, you can specify a directory path or paths by setting the CLASSPATH environmental variable.
+- Third, you can use the -classpath option with java and javac to specify the path to your classes.
+
+When a package is imported, only those items within the package declared as public will be available to non-subclasses
+in the importing code.

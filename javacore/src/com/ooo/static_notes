@@ -1,0 +1,54 @@
+Understanding static:
+
+When a member is declared static, it can be accessed before any objects of its class are created,
+and without reference to any object. You can declare both methods and variables to be static.
+The most common example of a static member is main( ).
+main( ) is declared as static because it must be called before any objects exist.
+Static method in Java is a method which belongs to the class and not to the object
+
+
+
+If 'static' keyword is crucial in main method because it allows the JVM to call the 'main' method without needing to instantiate the class.
+If you remove the 'static' keyword, the JVM won't be invoke the 'main' method, and you'll likely get an error similar to "Error: Main method not found in class"
+
+So, to run a Java program , the 'main' method must be declared as 'public static void main(String[] args)' . It serves as the starting point for the execution of the program.
+
+
+
+Static Methods:
+
+A static method belongs to the class rather than an instance of the class
+It is declared using the static keyword
+
+Static methods can be called using the class name, without creating an instance of the class.
+They cannot access non-static(instance) variables directly
+
+
+A static method can access only static data. It cannot access non-static data (instance variables)
+A non-static member belongs to an instance. It's meaningless without somehow resolving which instance of a class you
+are talking about. In a static context, you don't have an instance, that's why you can't access a non-static member
+without explicitly mentioning an object reference.
+In fact, you can access a non-static member in a static context by specifying the object reference explicitly :
+
+A static method can call only other static methods and cannot call a non-static method from it.
+A static method can be accessed directly by the class name and doesn’t need any object
+A static method cannot refer to "this" or "super" keywords in anyway
+
+
+Static Blocks:
+1. A static block is a block of code enclosed in braces and preceded by the 'static' keyword.
+2. It is executed when the class is loaded into memory, before the execution of any static method or creation of an instance.
+3. Static blocks are often used for static initialization.
+
+
+Memory Allocation of Static Methods:
+1. They are stored in the permanent Generation space of heap as they are associated with class in which they reside not to the objects of that class.
+2. But their local variables and the passed argument to them are stored in the stack.
+3. Since they belong to the class, so they can be called to without creating the object of the class.
+4. 
+
+
+
+
+
+

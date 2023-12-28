@@ -9,6 +9,8 @@
 
 package javacore;
 
+import java.util.Scanner;
+
 //=================================Structure of Java Program=================================================
 
 /*
@@ -44,8 +46,54 @@ public class JavaCore {
 		 * 'out' is a static member of the System class, which represents the standard output stream. This stream is connected to the console or terminal where your Java program is running.
 		 * 'println' is a method of the PrintStream class (an output stream class) that is attached to the standard output (System.out).
 		 */
+		// Print the output we have
 		System.out.println("Java CORE revision");
 		System.out.println("1st Commit");
+		// Input
+		/*
+		 * Scanner :
+		 * Scanner class is commonly used for this purpose. The Scanner class is part of the java.util package and provides methods for parsing primitive data types and strings. It can be used to read input from various sources such as the console, files, or strings.
+		 */
+		 Scanner input = new Scanner(System.in);
+		 System.out.println("Enter Your Name");
+		 String name= input.next();
+		 System.out.println("Welcome "+name);
+		 
+		 /* DataTypes in Java
+		  * 1. Primitive Data Type
+		  * 2. Reference Data Type
+		  * Primitive Data Type are those which is not breakable further
+		  * A. char
+		  * B. boolean
+		  * C. int
+		  * D. byte
+		  * E. short
+		  * F. float
+		  * G. Double
+		  * H. Long
+		  *Why are we specifying f and L for assigning the values 
+		  *
+		  *Beacuse the myFloat variable is a Double value unless we add f at end. Same with long
+		  *
+		  */
+		 
+		 byte myByte = 127;
+		 short myShort = 32767;
+		 int myInt = 2147483647;
+		 long myLong = 9223372036854775807L;  // Note the 'L' at the end for long literals
+		 float myFloat = 3.14f;  // Note the 'f' at the end for float literals
+		 double myDouble = 3.14;
+		 char myChar = 'A';
+		 boolean myBoolean = true;
+		 System.out.println(myByte);
+		 System.out.println(myShort);
+		 System.out.println(myInt);
+		 System.out.println(myLong);
+		 System.out.println(myFloat);
+		 System.out.println(myDouble);
+		 System.out.println(myChar);
+
+		
 	}
 
 }

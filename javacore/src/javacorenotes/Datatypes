@@ -1,0 +1,32 @@
+ Primitive Data Types are those which is not further breakable. Primitive types are used to create reference datatypes
+ 
+ byte:
+ Definition: 8-bit signed integer.
+ Range: -128 to 127.
+ 
+ short:
+ Definition: 16-bit signed integer.
+ Range: -32,768 to 32,767.
+ 
+ int:
+ Definition: 32-bit signed integer.
+ Range: -2^31 to 2^31 - 1.
+ 
+ long:
+ Definition: 64-bit signed integer.
+ Range: -2^63 to 2^63 - 1.
+ 
+ float:
+ Definition: 32-bit floating-point.
+ Example: 3.14f (Note the 'f' at the end for float literals).
+ 
+ double:
+ Definition: 64-bit floating-point.
+ Example: 3.14.
+ 
+ char:
+ Definition: 16-bit Unicode character.
+ Example: 'A', '1', '$'.
+ 
+ boolean:
+ Definition: Represents true or false.
