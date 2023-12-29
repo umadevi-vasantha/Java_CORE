@@ -1,0 +1,17 @@
+In Java, an outer class is a class that is not nested within another class. It is a standalone class that can have fields, methods, and other members. An outer class can also contain inner classes.
+
+An inner class, on the other hand, is a class that is defined inside another class. There are several types of inner classes in Java:
+
+1. Non static (Member) Inner Class:
+A Non Static inner class is associated with an instance of its outer class. It can access both static and non-static members of the outer class
+
+2. Static Nested Inner class
+A static nested Class is declared with the 'static' keyword. It does not have a refernce to an instance of the outer class can only have access to the static members of the outer class
+
+3. Local Inner Class
+A local inner class is declared within block of code, typically within a methos. It can access the members of its enclosing methos and the outer class.
+Remember that the scope of the local inner class is limited to the method in which it is defined. Therefore, you can only create instances of the local inner class and call its methods within that method
+
+4. Anonymous Class :
+
+//To cover later.. 
