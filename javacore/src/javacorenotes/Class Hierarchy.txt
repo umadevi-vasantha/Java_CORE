@@ -1,0 +1,58 @@
+The class hierarchy in Java is a hierarchical structure(Tree like Structure) of classes and interfaces, organized based on inheritance and relationships between classes. 
+It represents the foundation for object-oriented programming in Java. Below are some main parts of the Java class hierarchy:
+
+1. Object Class :
+Root of the Hierarchy: The Object class is the root of the Java class hierarchy. Every class in Java, either directly or indirectly, inherits from the Object class.
+
+Here, I'll explain each of the key methods in the Object class:
+1. toString()
+2. equals(Object obj)
+3. hashCode()
+4. getClass()
+5. clone()
+6. finalize()
+
+1. toString():
+	A. public String toString()
+	B. Description: Returns a string representation of the object. The default implementation returns the class name followed by the "@" character and the object's hash code.
+	C. Useful Scenarios:
+		Providing a human-readable representation of an object.
+		Useful for debugging and logging.
+		
+2. equals(Object obj):
+	A. public boolean equals(Object obj)
+	B. Description: Indicates whether some other object is "equal to" this one. The default implementation compares object references using the == operator.
+	C. Useful Scenarios:
+		Customizing the equality comparison for objects.
+		Overriding this method to provide meaningful comparisons based on object content.
+3. hashCode():
+	A. public int hashCode()
+	B. Description: Returns a hash code value for the object. The default implementation returns the object's memory address as an integer.
+	C. Useful Scenarios:
+		Providing a hash code for use in hash-based data structures (e.g., HashMap, HashSet).
+		Overriding this method to ensure consistency with the equals method.
+		
+4. getClass():
+	A. public Class<?> getClass()
+	B. Description: Returns the runtime class of an object as a Class object.
+	C. Useful Scenarios:
+		Obtaining information about the runtime type of an object.
+		Useful for reflection and runtime type checking.
+5. clone():
+	A. protected Object clone() throws CloneNotSupportedException
+	B. Description: Creates and returns a copy of the object. To enable cloning, a class must implement the Cloneable interface, and this method must be overridden.
+	C. Useful Scenarios:
+		Creating a copy of an object to ensure data integrity.
+		Overriding this method to support custom cloning logic.
+6. finalize():
+	A. protected void finalize() throws Throwable
+	B. Description: Called by the garbage collector before an object is reclaimed. This method is called when the object is no longer reachable.
+	C. Useful Scenarios:
+		Releasing resources or performing cleanup operations before an object is garbage collected.
+		Not commonly used due to the unpredictability of when the garbage collector will run.
+		
+finalize method is depreacted from java9 version	
+In programming, the term "method deprecation" refers to marking a method as deprecated, which is a way for developers and API designers to signal that the method is no longer recommended for use. Deprecation is typically used when a method is outdated, may have security issues, or is being replaced by a better alternative.
+
+When a method is deprecated, it means that while the method is still available and functional, developers are encouraged to avoid using it. Instead, they should consider using a different method or adopting a different approach that is recommended by the library or framework.
+
