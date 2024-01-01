@@ -1,0 +1,179 @@
+Polymorphism, in the context of object-oriented programming (OOP), refers to the ability of a single entity (such as a method or class) to take on multiple forms.
+It allows objects to be treated as instances of their parent class rather than their actual class, promoting flexibility and code reuse.
+There are two main types of polymorphism in OOP:
+
+Compile-time Polymorphism (Method Overloading):
+===============================================
+Involves multiple methods in the same class with the same name but different parameters.
+The decision on which method to call is made at compile time based on the method signature and arguments.
+Also known as static or early binding.
+
+
+Runtime Polymorphism (Method Overriding):
+========================================
+Involves a base class and one or more derived classes.
+The same method name is used in both the base and derived classes, but the behavior is overridden in the derived classes.
+The decision on which method to call is made at runtime based on the actual type of the object.
+Also known as dynamic or late binding.
+
+===================================================================================================================================
+Why the Method Overloading is called Complie-time Polymorphism or Static/early binding
+
+Method overloading is referred to as "Compile-time Polymorphism" because the decision about which method to call is made by the compiler at the time of compilation. In Java, method overloading occurs when a class has two or more methods with the same name but different parameters within the same class scope.
+
+Here are the key points that highlight why method overloading is considered compile-time Polymorphism:
+
+Same Method Name:
+-------------------
+In method overloading, multiple methods within the same class have the same name.
+Different Parameters:
+--------------------
+The methods have different parameter lists, which could involve differences in the number, types, or order of parameters.
+Compile-time Decision:
+----------------------
+When a method is called, the compiler determines which method to invoke based on the method name and the types/number of arguments provided in the method call.
+The decision is made during the compile-time because the compiler can statically analyze the method signatures and choose the appropriate method.
+Static Binding:
+---------------
+Method overloading is also known as static or early binding because the binding between the method call and the method implementation is resolved during the compilation phase.
+
+
+=====================================================================================================================================
+
+Why the Method Overriding is called as "Dynamic Polymorphism" or "Runtime Polymorphism"
+Method overriding is often referred to as "Dynamic Polymorphism" or "Runtime Polymorphism" because the decision about which method to call is made at runtime based on the actual type of the object. This is in contrast to method overloading, which is resolved at compile-time.
+
+Here are the key points that explain why method overriding is considered dynamic polymorphism:
+
+Inheritance and Overriding:
+--------------------------
+Method overriding occurs in the context of inheritance when a subclass provides a specific implementation for a method that is already defined in its superclass.
+Same Method Signature:
+---------------------
+In method overriding, the overriding method in the subclass has the same method signature (name, return type, and parameters) as the overridden method in the superclass.
+Decision at Runtime:
+-------------------
+The decision about which method to call is not made at compile-time but rather at runtime.
+When a method is called on an object reference, the JVM determines the actual type of the object and invokes the overridden method associated with that type.
+Late Binding:
+-------------
+Method overriding is sometimes referred to as "late binding" because the binding between the method call and the method implementation is resolved during runtime.
+The actual type of the object is known only at runtime, and the appropriate method is dynamically bound to the object.
+
+======================================================================================================================================
+
+Dynamic Method Dispacth::
+
+Dynamic method dispatch is a concept in object-oriented programming that enables the selection of a specific method implementation at runtime, based on the actual type of the object rather than the reference type. This is a key feature of polymorphism and allows for flexibility and extensibility in code.
+
+Here's how dynamic method dispatch works in Java:
+
+Inheritance and Overriding:
+
+Dynamic method dispatch is closely tied to inheritance and method overriding.
+ When a subclass provides a specific implementation for a method that is already present in its superclass, it overrides that method.
+Example:
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+Dynamic Method Dispatch:
+
+Objects of the subclasses can be referred to using the reference of the superclass.
+The method called on the reference is determined at runtime based on the actual type of the object.
+
+public class Test {
+    public static void main(String[] args) {
+        Animal animal1 = new Dog();
+        Animal animal2 = new Cat();
+
+        animal1.sound();  // Output: Dog barks (dynamic method dispatch)
+        animal2.sound();  // Output: Cat meows (dynamic method dispatch)
+    }
+}
+Dynamic Binding:
+---------------
+The Java Virtual Machine (JVM) determines the appropriate method implementation to call based on the actual type of the object during runtime. This is known as dynamic binding.
+Dynamic method dispatch is also sometimes referred to as late binding or runtime polymorphism.
+
+==============================================================================================================
+
+
+Upcasting and DownCasting
+
+Casting:
+Casting is the process of converting one data type into another in programming. 
+In the context of object-oriented programming, casting is often used with reference types (objects). 
+There are two types of casting: upcasting and downcasting.
+
+1. Upcasting:
+Upcasting involves converting an object of a subclass to a reference of its superclass.
+This is considered safe and doesn't require an explicit cast. The casting is implicit.
+
+class Animal { /* ... */ }
+class Dog extends Animal { /* ... */ }
+
+public class Example {
+    public static void main(String[] args) {
+        Dog myDog = new Dog();
+        Animal myAnimal = myDog; // Upcasting (implicit)
+    }
+}
+In this example, a Dog object is upcast to an Animal reference.
+
+2. Downcasting:
+Downcasting involves converting an object of a superclass back to its original subclass. 
+This requires an explicit cast and may throw a ClassCastException if the original object isn't an instance of the target subclass.
+
+java
+Copy code
+class Animal { /* ... */ }
+class Dog extends Animal { /* ... */ }
+
+public class Example {
+    public static void main(String[] args) {
+        Animal myAnimal = new Dog();
+        Dog myDog = (Dog) myAnimal; // Downcasting (explicit)
+    }
+}
+
+
+
+=============================================================================================
+
+Upcasting involves treating an object of a subclass as an object of its superclass.
+It's an implicit conversion where you assign an object of a derived class to a reference variable of its base class.
+Use Cases:
+
+Polymorphism: Enables you to write more generic and reusable code.
+Animal myAnimal = new Dog();  // Upcasting
+Method Invocation: Allows calling overridden methods of the subclass using the reference of the superclass.
+myAnimal.makeSound();  // Calls the Dog's overridden method if overridden
+2. Downcasting:
+Definition:
+Downcasting involves treating an object of a superclass as an object of its subclass.
+It's an explicit conversion where you cast an object from a broader type to a more specific type.
+Use Cases:
+Accessing Specific Features: To access members or methods specific to the subclass that are not present in the superclass.
+Dog myDog = (Dog) myAnimal;  // Downcasting
+myDog.bark();  // Accessing a method specific to Dog
+Type Checking: To ensure the actual type of the object before performing operations specific to the subclass.
+if (myAnimal instanceof Dog) {
+    Dog myDog = (Dog) myAnimal;  // Downcasting if it's a Dog
+    myDog.bark();
+}
