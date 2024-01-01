@@ -27,6 +27,7 @@ public class ObjectMethodClone implements Cloneable {
 		System.out.println(obj.hashCode());
 		System.out.println(obj1.hashCode());
 		System.out.println(obj.equals(obj1));
+		Object object=new Object();
 		
 		
 		

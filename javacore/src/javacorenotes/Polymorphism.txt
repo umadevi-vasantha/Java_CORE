@@ -60,6 +60,15 @@ Late Binding:
 Method overriding is sometimes referred to as "late binding" because the binding between the method call and the method implementation is resolved during runtime.
 The actual type of the object is known only at runtime, and the appropriate method is dynamically bound to the object.
 
+
+
+Note: When the method is declared as final , then that method cannot be Overriding.
+Final method can also be used to avoid inheritance
+
+Static method can be inherited, but cannot be overridden
+Because Overriding depends on obj where as static is not about obj/dependent on obj (it is about the Class)
+
+When we decalre a class as final,,implicity all the methods inside this Class will be final
 ======================================================================================================================================
 
 Dynamic Method Dispacth::
