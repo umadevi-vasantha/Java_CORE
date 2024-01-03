@@ -1,0 +1,25 @@
+Access modifiers:
+==================
+
+Access control modifiers (public, private, default, and protected) determine the visibility and accessibility of classes, methods, and fields within a package or across packages. 
+Here's a summary of how these modifiers work and their access levels:
+
+            │ Class │ Package │ Subclass │ Subclass │ World
+            │       │         │(same pkg)│(diff pkg)│(diff pkg & not subclass)
+────────────┼───────┼─────────┼──────────┼──────────┼──────────────────────────
+public      │   +   │    +    │    +     │     +    │   +
+────────────┼───────┼─────────┼──────────┼──────────┼──────────────────────────
+protected   │   +   │    +    │    +     │     +    │
+────────────┼───────┼─────────┼──────────┼──────────┼──────────────────────────
+no modifier │   +   │    +    │    +     │          │
+────────────┼───────┼─────────┼──────────┼──────────┼──────────────────────────
+private     │   +   │         │          │          │
+
+
++ : accessible
+blank : not accessible
+
+
+NOTE: the protected access modifier allows access to the members (methods or fields) within the same package and by subclasses, regardless of the package they are in.
+ However, there's an additional restriction when accessing protected members through a reference of the superclass type. 
+ When you have a reference to the superclass (BankAccount in this case), the access to protected members is only allowed if the reference is pointing to an instance of the subclass (SavingAccount).
