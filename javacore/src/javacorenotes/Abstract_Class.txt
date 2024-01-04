@@ -1,0 +1,16 @@
+Abstract Class is a class that cannot be instantiated on its own and is meant to be subclassed by other classes
+
+1. Abstract class is declared with the 'abstract' keyword.
+2. It may have both abstract and non abstract methods(methods with implementation)
+3. An abstract is a Java modifier applicable for classes and methods in Java but not for Variables.
+4. An instance of an abstract class can not be created
+5. Constructor are allowed.
+6. We can have an abstract class without any abstract method.
+7. There can be final method in abstract class but not abstract final method..Because any method declared as final cannot be overridden,
+. However the purpose of an abstract class is to provide a declaration in the abstract class that must be implemented by its concrete subclasses.
+8. Same way there can be static method in the abstract class but not abstract method.. Because any method declared as static cannot be overridden,
+However the purpose of an abstract class is to provide a declaration in the abstract class that must be implemented by its concrete subclasses.
+9. We can make outer and inner class as abstract.
+10. If class contains atleast one abstract method, then we should declare class as abstract compulsorily.
+11. If the Child class is unable to provide implementation to all abstract methods of the Parent class then we should declare that Child class
+as abstract so that the next level Child class should provide implementation to the remaining abstract method
