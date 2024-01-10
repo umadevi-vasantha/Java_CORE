@@ -1,0 +1,63 @@
+***GIT INIT***
+======================
+
+git init :
+ * Command is used to initialize a new git repository. When you run 'git init' in a directory, it sets up all the necessary files and 
+ directories to start using Git for version control in that specific directory.
+ Here's what typically happens when you run 'git init';
+ 
+ 1. Creation of .git Directory :
+ 	The core of the git repo is stored in a hidden directory called '.git'. This directory contains all the metadata and objects database
+ 	needed for version control.
+ 	.git/
+├── branches/
+├── hooks/
+├── info/
+├── objects/
+│   ├── info/
+│   └── pack/
+└── refs/
+    ├── heads/
+    └── tags/
+ 	
+	The .git directory is crucial for tracking changes, branches, and other Git-related information.
+	
+branches/: Contains files that store branch names.
+hooks/: Contains scripts that can be triggered at different points in the Git workflow.
+info/: Contains a global exclude file for ignored patterns.
+objects/: Contains all the data for commits, trees, and blobs, organized into subdirectories.
+refs/: Contains pointers to commits, organized into heads (branches) and tags.
+
+config:
+=================================
+The config file stores project-specific configuration settings. It can be edited manually or using git config commands.
+description:
+=================================
+A simple text file describing the repository. It is mainly used by the GitWeb program but has no significant impact on the repository itself.
+HEAD:
+==================================
+The HEAD file points to the latest commit in the currently checked-out branch. It can also point to a specific commit or a branch.
+index:
+====================================
+The index file serves as the staging area. It contains information about which files and changes will be part of the next commit.
+hooks/:
+====================================
+This directory contains sample hook scripts that can be used to customize Git's behavior at different points in the workflow. These scripts are not active by default but can be renamed to be used.
+info/:
+====================================
+The info directory contains a global exclude file, which specifies patterns for files and directories that should be ignored globally.
+logs/:
+===================================
+The logs directory contains records of changes made to the repository. It includes logs for commits, reflogs, and other information.
+objects/:
+===================================
+The objects directory stores all the Git objects, including commits, trees, and blobs. It is organized into subdirectories based on the first two characters of the object's SHA-1 hash.
+refs/:
+===================================
+The refs directory stores references (pointers) to commits. The heads subdirectory contains references to branch tips, and the tags subdirectory contains references to tag objects.
+config, description, HEAD, index:
+=====================================
+These files store various configuration, descriptive, and state information for the repository.
+
+2 .Creation of Initial Files:
+Git creates some initial files in the project directory, including config, description, HEAD, and index.

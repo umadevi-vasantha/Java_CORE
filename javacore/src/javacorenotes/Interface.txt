@@ -1,0 +1,46 @@
+Interface 
+=============================
+
+1. An interface is a reference type in Java similar to a class.
+2. Interfaces specify what a class must do and not how. it is the blueprint of the class.
+3. Like Class, Interface can have methods and variables,but the methods declared in the interface are by default abstract(only method signature, nobody).
+4. Interface is a collections of abstract methods (methods without a body).
+5. Interfaces provide a way to achieve abstraction and multiple inheritance in Java.
+6. Interface is declared using 'interface' keyword.
+7. A class implements an interface using 'implements' keyword.
+8. All abstract methods in the interface must be implemented by the class.
+9. If a class implements an interface and does not provide method bodies for all functions specified in the interface, then the class must be declared abstract.
+10 Variables in interfaces are implicitly 'public' , 'static' and 'final' . known as 'constants' or 'static final variables'
+11.Interfaces cannot instantiated and interfaces cannot have constructors.
+	
+	Public : 
+	a. Interface variables are implicitly public, meaning they can be accessed from outside the interface.
+	b. This ensures that constants defined in an interface are easily accessible to other classes or interfaces that implement or use the interface.
+	
+	Static:
+	a. Interface variables are implicitly static, which means they belong to the interface itself rather than any specific instance of the interface.
+	b. Static variables are shared among all instances of the interface and can be accessed using the interface name.
+	
+	Final:
+	a. Interface variables are implicitly final, indicating that their values cannot be changes once assigned. 
+	b. This ensured that the constants in an interface remain constant throughtout the program.
+	
+11. From java 8 + : Default methods , Static methods are allowed in interfaces.
+12. Functional Interface:
+	An interface with single abstract method is a functional interface.
+	Used in the context of lambda expressions.
+13. Interfaces can extend other interfaces using the 'extends' keyword
+
+=====================================================================================================================================
+
+Reason why abstract class and Interfaces cannot be instantiated:
+
+1. Incomplete Implementation:
+Abstract classes and interfaces often contain abstarct methods without a defined implementation. Instantiating such class or interface wouldn't make sense.
+there are methods that lack complete implementaion.
+2. Role of Blueprints:
+Abstract classes and interfaces are meant to be extended or implemented by other classes. They serve as blueprints or contracts, defining a structure that should be realized by concrete subclasses.
+3. Encouraging Ploymorphism:
+by preventing instantiation of abstract classes and interfaces, OOp encourages polymorphism.Subclasses or implementing classes are expected to provide their own specific impelmentations, promoting a flexible and extensible design.
+4.Enforcement of contracts:
+Abstarct classes and interfaces helps in enforcing a contract or API. Making them non-instantiable ensures that any class claiming to adhere to that contract must provide complete and meaningful implementations for all required methods.

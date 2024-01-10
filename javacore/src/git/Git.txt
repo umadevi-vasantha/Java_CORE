@@ -1,0 +1,22 @@
+Git :
+
+1. Git is a distributed version control system (DVCS) that helps developers track changes in their source code during software development.
+2. Git is designed to be fast, flexible and reliable. It allows multiple developers to work on a project simultaneously maintaining a history of changes and enabling collaboration.
+
+Key features of Git include:
+
+1. Version Control : Git Keeps track of changes made to source code over time, allowing developers to revert to previous versions, track modification, and collaborate on a codebase.
+2. Branching and Merging : Git supports branching, enabling developers to create separate lines of development. Branches can be merged back into the main code base, facilitating the integration of new features or bug fixes.
+3. Distributed development : Each developer has copy of the entire project, and changes can be made offline. Git allows developers to synchronize their local copies with a central repository, promoting a distributed development model.
+
+Git Hub :
+Git Hub is a web-based  platform built around Git that provides hosting for software development projects. It offers collaboration tools, social networking features, and a centralized location for managing Git repositories. GitHub is widely used for both open-source and private projects.
+
+Key features of GitHub include:
+
+1. Repository Hosting:  GitHub serves as a remote repository for Git projects, allowing developers to store their code in the cloud. This makes it accessible from anywhere with an internet connection.
+2. Collaboration : GitHub facilitates collaboration among developers by providing tools for code review, issue tracking, and project management. Multiple developers can contribute to a project, discuss changes, and submit pull requests.
+3. Pull Requests : Developers use pull requests to propose changes to the main codebase. This allows other to review the changes , comment specific lines of code and discuss potential modification before merging the code.
+4. Issue tracking : GitHub includes an issue tracking system, allowing developers to report bugs, suggest enhancements, and discuss project related topics. Issues can be linked to specific commits, making it easier to trace the history of problem-solving.
+
+ 

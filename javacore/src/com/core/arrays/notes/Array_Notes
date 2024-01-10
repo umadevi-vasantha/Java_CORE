@@ -1,0 +1,84 @@
+Before starting with Arrays ..what is data structure will see:
+
+1. A data structure is a way of organizing and storing data to perform operations efficiently.
+Data Structures are essentials in computer science and programming because they enable efficient in computer science and programming because they 
+enable efficient data storage, retrieval and manipulation, which intrun impacts the efficiency of algorithms.
+
+There are various types of data structures, each designed for specific purpose. Here are some common types of data structures:
+
+Arrays, Linked Lists, Stacks , Queues , Trees, Graph, Hash Tables, Heap ,Sets , Map/Dictionaries.
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Arrays : It is Data Structure that allows you to store multiple values of the same type in single varible.
+Arrays are useful when you need to work with collection of similar elements, such as list of integers, characters, or objects.
+
+1. Grouping Elements :
+Arrays provide a way to group related elements together . For example , if we want to store the scores of students in a class, you can use array to keep all the scores in one place
+
+2. Random Access :
+Elements in an array are accessed using index,and it allows for fast and direct access to any elements in the array. The index start at 0,
+
+3.Efficient Memory usage :
+Arrays have fixed size, which means they allocate contiguous memory locations for elements. This results in efficient memory usage, making it suitable for scenarios where memory efficiency is crucial.
+
+4. Iterating over Elements:
+Arrays make it easy to iterate over all elements using loops. This simplifies operations that need to be performed on each elements in the array.
+
+5.Parameter passing :
+Arrays are often used to pass a collection of values to a method .Instead of passing individual parameters, you can pass an making the code more concise and manageable.
+
+6.Dynamic data storage :
+While arrays have fixed size, Java provides other data structures like ArrayList which is on top of arrays but offer dynamic resizing, making them more flexible for scenariors where the size of the collection may change
+
+---------------------------------------------------------------------------------------------------------------------------
+
+
+Declaration and initialization of array:
+
+dataType[] arrayname = new dataType[arraySize];
+
+dataType is the type of element that array will hold,
+arrayname is the name of the array =
+arraySize is the number of elements in the array
+
+eg:  int[] myarray= new int[5];
+
+
+Declaration : The declaration of an array happens when you specify its type, name.The declaration does not allocate memory for the array
+elements. It simply informs the compiler about the type of elements the array will hold and array's name
+
+int[] myarray // Declaration
+
+Initialization : Initialization involves assigning an actual array object to the declared variable. This os done using the new keyword. and it allocates memory for the aaray elements.
+At this stage, the array is created and its element are initialized to default values(e.g 0 for numeric values and null for objects types)
+
+myarray = new int[5];  // initialization
+
+---------------------------------------------------------------------------------------
+
+In Java, both primitive arrays and objects arrays are stored in the heap memory, not the stack.
+The stack in Java is used for storing local variables and method call information , while the heap is used  for dynamic memory allocation, including objects and arrays.
+
+1. Memory for the array is allocated in the heap
+2. For Primitive arrays, each elements' value is directly stored in the allocated memory.
+3. For objects arrays, each elements is reference to an object. The actual objects themselves are stored in the heap, and the array holds references to these objects.
+4. The reference to the array is stored in a variable, typically on the stack.
+
+Remember that primitive types themselves(like 'int' 'char' etc) can be stored on the stack when they are local variables, method parameters,or fields of objects. However, when you create an array, the memory for the array itself and its elements is allocated in the heap.
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+In Java will the arrays stored in contiguous memory ????
+
+Arrays are designed to store elements in contiguous memory locations. However it's important to note that the specific memory management and allocation are abstracted by the Java Virtual Machine(JVM), and the programmer doesn't have direct control over memory addresses as in languages liek C or C++.
+The JVM handles memory allocation and ensures that arrays are stored in a way that allows for efficient access to elements.
+
+While the contiguous memory storage is a common implementation strategy, it's not required by the Java language specification.
+The Java language specification defines the behaviour and properties of arrays, but it does not mandate a specific implementation. As a result, the JVM may use various techniques for memory management, and as long as the specified behavior is maintained, the actual details of memory storage may vary across different JVM implementations.
+
+In Practical terms, You can treat Java arrays as if they are stored in contiguous memory, and the language guarantees that array elements are accessible through index notation. However, the exact memory management details are left to the JVM's discretion.
