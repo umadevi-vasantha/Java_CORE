@@ -1,0 +1,62 @@
+ArrayList :
+
+==========
+ArrayList in Java was introduced to overcome some of the limitation of arrays. While arrays have their own advantages, ArrayList provides additional features
+and flexibility that make it more suitable for certain scenarios. 
+
+1. Dynamic Sizing :
+Arrays in Java have a fixed size, and once they are created, their size cannot be changed.In Contrast,ArrayLists dynamically resize
+themselves as elements are added or removed. This dynamic sizing makes Arraylists more flexible when the size of the collection is not
+known in advance or may change during the program execution.
+
+2. Automatic Resizing :
+ArrayLists automatically handle resizing operations, ensuring that developers do not need to manually manage memory allocations or reallocations.
+This can simplify the code and reduce the risk of errors related to managing array sizes.
+
+3. Ease of use :
+ArrayList come with built-in methods for common operations, such as adding, removing or searching for elements. This can lead to more concise and readable code
+compared to manually managing these operations with arrays.
+
+4. No Need for Manual Element Shifting :
+When elements are added or removed in the middle of an ArrayList, the underlying implementations takes care of shifting the elements.
+In contrast, with arrays, adding or removing elements in the middle required manual shifting of the elements, which can be error-prone.
+
+5. Support for Generics :
+ArrayLists support generics, allowing you to create a collection of specific type. This helps ensure type safety and reduces the risk of runtime errors related to incorrect datatypes.
+
+
+6. Inter-Operability with Collections Framework :
+ArrayList is part of the Java Collections Framework, which provides a common set of interfaces and classes for working with collections.
+This framework enables inter-operability between different collections types and provides a consitent API for developers.
+
+7. Concurrent Modifications :
+ArrayList provides fail-fast behavior, meaning it throws a ConcurrentMOdificationException if the list is structurally modified(adding or removing elements) while an iteration is in progress.
+This helps catch potential bugs related to concurrent modifications.
+
+==========================================================================
+
+1. ArrayList is a part of the Java collection framework and it is a class java.util package.
+2. It provides us with dynamic arrays in Java.
+3. It is slower than standard arrays but can be helpful in programs where lots of manipulation in the array is needed.
+4. ArrayList is a Java class implemented using the List interface
+5. It provides the functionality of a dynamic array where the size is not fixed as an array. Also as a part of Collection framework, it has many
+features not available with arrays.
+
+
+================================================================================
+
+Dynamic memory allocation in 'ArrayList' :
+-------------------------------------------------
+1. Initial capacity : When an arraylist is created, it has an initial capacity, which is the number of elements it can initially store without resizing.
+The  default initial capacity is 10, but we can specify a different initial capacity when creating an 'ArrayList'.
+2. Dynamic Resizing : As the elements are added to an 'ArrayList', it automatically grows its internal array to accommodate the new elements.
+When the number of elements exceeds the current capacity, the 'ArrayList' resizes it underlying array to a larger size.
+3. Resizing Strategy :
+The resizing strategy involves creating a new array with a larger capacity and copying the elements from the current array to the new one.
+The new capacity is often calculated based on a growth factor, such as doubling the current capacity.
+4. Copying the Elements :
+The Process of resizing includes copying existing elements from the old array to the new array. This operation can be computationally expensive, especially if the 'ArrayList'
+has a large number of elements. However, it allows the 'ArrayList' to provide efficient random access to elements.
+5. Minimizing Resizing Operations:
+To minimize the number of resizing operations, it's common for ArrayList to use a growth factor of 1.5 or 2 when doubling the capacity. 
+This helps strike a balance between avoiding frequent resizings and minimizing wasted memory.

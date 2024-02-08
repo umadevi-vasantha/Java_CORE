@@ -1,0 +1,381 @@
+1.To check the git version :
+git --version
+
+2. Configure Git:
+git config command is used to set and get configuration options. It allows you to configure various aspects both at global level and local level
+
+git config --global user.name "Your User Name"
+git config --global user.email "Your email Address"
+
+git config --list
+
+3. Initialize git
+
+git init
+
+4. Adding New Files:
+
+git status is a Git Command that shows the status of changes as untracked, modified , or staged in our working directory.
+
+git status 
+
+options:
+
+git status -s/--short: Give the output in a a short format, suitable for scripting
+git status -b/--branch : Show branch information
+git status -u/--untracked-files : Show untracked files
+git status -v/--verbose : Gives more detailed output
+
+Tracked -files that git knows about and are added to the repository
+Untracked - files that are in your working directory, but not added to the repository
+
+5. Git Staging Environment :
+
+As we are working, we will adding,editing and removing files. But whenever you hit a milestone or finish a part of work , we should add the files to staging environment
+
+Staged files are files that are ready to be committed to the repository you are working on.
+
+git add .
+git add -A/--all
+git add -n/--dry-run :  Git will not actually stage or commit any changes, but it will show us what changes would be staged if you were
+to run the command without the -n option
+git add -v . : git will show more detailed output about the changes being added to the staging area.
+
+git add -f . : forcefully add files to the staging area , even if they are ignored by git.
+Allows us to override the ignore rules and forcefully add files to the staging area.
+
+
+6. Git Commit :
+
+Git commit is used to track the changes in the repository
+
+Adding commits helps us to keep track of the changes as we work.
+
+git commit -m "Commit_Message"
+git commit --amend : This command opens the text editor for you to modify the last commit's message or add additional changes to it.
+git commit --author="Author Name <author@example.com>"
+git commit --date="YYYY-MM-DDTHH:MM:SS"
+git commit -p : This command opens the patch mode, allowing you to selectively stage changes for the commit.
+git commit --only : Include only tracked files in the commit, skipping untracked files:
+git commit --all : Include both tracked and untracked files in the commit:
+git commit --dry-run : Dry run (show what would be committed without actually committing):
+git commit --verbose : Show verbose output:
+
+
+
+7 . Git Branch : 
+In Git, a branch is a new/separate version of the main repository.
+Branches allow you to work on different parts of a project without impacting the main branch.
+
+When the work is complete, a branch can be merged with the main project.
+
+You can even switch between branches and work on different projects without them interfering with each other.
+
+Branching in Git is very lightweight and fast!
+
+Certainly! Here's an organized set of notes summarizing the key points about working with branches in Git:
+
+### Basic Usage:
+
+1. **List all local branches:**
+   ```bash
+   git branch
+   ```
+
+2. **Create a new branch:**
+   ```bash
+   git branch <branch_name>
+   ```
+
+3. **Delete a branch (only if it's fully merged):**
+   ```bash
+   git branch -d <branch_name>
+   ```
+
+### Branch Options:
+
+4. **Force delete a branch (even if it's not fully merged):**
+   ```bash
+   git branch -D <branch_name>
+   ```
+
+5. **Rename the current branch:**
+   ```bash
+   git branch -m <new_branch_name>
+   ```
+
+6. **Create and switch to a new branch (shortcut for `git branch` and `git checkout`):**
+   ```bash
+   git checkout -b <new_branch_name>
+   ```
+   OR (in Git versions 2.23 and later)
+   ```bash
+   git switch -c <new_branch_name>
+   ```
+
+### Listing Remote Branches:
+
+7. **List all remote branches:**
+   ```bash
+   git branch -r
+   ```
+
+8. **List all local and remote branches:**
+   ```bash
+   git branch -a
+   ```
+
+### Other Options:
+
+9. **Show the last commit on each branch:**
+   ```bash
+   git branch -v
+   ```
+
+10. **Show branches and their upstream:**
+    ```bash
+    git branch -vv
+    ```
+
+11. **Sort branches by their last commit date:**
+    ```bash
+    git branch --sort=-committerdate
+    ```
+
+### Merging and Rebasing:
+
+12. **List branches that have been merged into the current branch:**
+    ```bash
+    git branch --merged
+    ```
+
+13. **List branches that have not been merged into the current branch:**
+    ```bash
+    git branch --no-merged
+    ```
+
+14. **Rebase the current branch onto another branch:**
+    ```bash
+    git rebase <target_branch>
+    ```
+
+### Remote Branches:
+
+15. **Create a new branch based on a remote branch:**
+    ```bash
+    git branch <local_branch_name> origin/<remote_branch_name>
+    ```
+
+16. **Delete a remote branch:**
+    ```bash
+    git push origin --delete <remote_branch_name>
+    ```
+
+These commands are essential for managing branches in Git, whether for local development or collaboration with remote repositories. Always refer to the Git documentation (`git branch --help`) for the most up-to-date information on available options.
+
+
+
+Git Pull :
+
+When working as a team on a project, it is important that everyone stays up to date.
+Any time you start working on a project, you should get the most recent changes to your local copy.
+With Git, you can do that with pull.
+pull is a combination of 2 different commands:
+
+1.fetch
+2.merge
+
+
+The git fetch command is used to download changes from a remote repository to your local repository. 
+It retrieves new branches, updates information about existing branches, and downloads new objects necessary for the repository history.
+Here are some commonly used options with the git fetch command:
+
+git fetch : Fetch changes from the default remote (usually "origin"):
+git fetch upstream : Fetch changes from a specific remote (e.g., "upstream"):
+git fetch <remote> <branch> : Fetch specific branch or branches from a remote:
+git fetch --all : Fetch all branches from a remote
+git fetch --prune : Prune remote-tracking branches that no longer exist on the remote:
+git fetch --prune --all : Prune all stale remote-tracking branches:
+git fetch --tags : Fetch tags from a remote (in addition to branches):
+git fetch <remote> tag <tag_name> : Fetch a specific tag from a remote:
+git fetch --progress : Show progress during the fetch operation:
+git fetch --verbose :  Show detailed information about the fetch operation:
+git fetch --dry-run : Dry run (show what would be fetched without actually fetching):
+git fetch --depth=1 : Fetch only the most recent commit (shallow fetch):
+
+
+
+
+
+In Git, the `git merge` command is used to combine changes from different branches.
+It takes the contents of a source branch and integrates it with the target branch. 
+The general syntax for the `git merge` command is:
+
+```bash
+git merge <source_branch>
+```
+
+Here's a brief explanation of how `git merge` works:
+
+1. **Switch to the Target Branch:**
+   Before merging, make sure you are in the branch where you want to merge changes. For example:
+
+   ```bash
+   git checkout target_branch
+   ```
+
+2. **Run the Merge Command:**
+   Use the `git merge` command to merge changes from the source branch into the target branch:
+
+   ```bash
+   git merge source_branch
+   ```
+
+   This command will attempt to merge the changes from `source_branch` into the current branch (`target_branch`).
+
+3. **Resolve Conflicts (if any):**
+   If Git encounters conflicts during the merge, it will pause and ask you to resolve them manually. You'll need to open the conflicted files, resolve the conflicts, and then continue the merge process. After resolving conflicts, you can continue with the merge by running:
+
+   ```bash
+   git merge --continue
+   ```
+
+4. **Complete the Merge:**
+   Once the merge is successful (without conflicts or after resolving conflicts), Git will complete the merge, and you can commit the changes to finalize the merge:
+
+   ```bash
+   git commit -m "Merge changes from source_branch"
+   ```
+
+   This commit message is optional, but it's a good practice to provide a meaningful message.
+
+5. **Push Changes (if needed):**
+   If you want to push the merged changes to a remote repository, you can use:
+
+   ```bash
+   git push origin target_branch
+   ```
+
+   Replace `origin` with the name of your remote repository.
+
+Keep in mind that the merge process can be straightforward if there are no conflicting changes between branches. However, conflicts may arise when changes have been made to the same lines in both the source and target branches.
+ In such cases, manual intervention is required to resolve the conflicts.
+
+
+
+The `git push` command is used to update remote branches with the changes you've made locally. It pushes your committed changes from your local repository to a remote repository, making them available to others. The general syntax for the `git push` command is:
+
+```bash
+git push <remote> <branch>
+```
+
+Here are some details and options related to the `git push` command:
+
+1. **Pushing to a Remote Repository:**
+   - `<remote>`: The name of the remote repository. Commonly used names are "origin" (the default name when you clone a repository) or any custom name you've assigned to a remote.
+
+   - `<branch>`: The name of the branch you want to push. For example, if you want to push the changes from your local branch "main" to the remote repository, you would use:
+
+     ```bash
+     git push origin main
+     ```
+
+2. **Pushing Tags:**
+   - You can push tags to the remote repository using:
+
+     ```bash
+     git push <remote> --tags
+     ```
+
+3. **Pushing All Branches:**
+   - To push all branches to the remote repository, you can use the `--all` option:
+
+     ```bash
+     git push <remote> --all
+     ```
+
+4. **Force Pushing:**
+   - Use the `--force` or `-f` option to force push changes. Be cautious with force pushing, as it overwrites remote branches and can lead to data loss if not used carefully:
+
+     ```bash
+     git push --force
+     ```
+
+5. **Pushing to a Specific Branch:**
+   - If your local branch has a different name than the remote branch, you can specify the remote branch explicitly:
+
+     ```bash
+     git push <remote> local_branch:remote_branch
+     ```
+
+6. **Pushing with Set-Upstream:**
+   - When you push a branch for the first time, you can use the `-u` or `--set-upstream` option to set up tracking. This allows you to use `git push` without specifying the remote and branch in future pushes:
+
+     ```bash
+     git push -u <remote> <branch>
+     ```
+
+7. **Dry Run:**
+   - You can perform a "dry run" to see what would be pushed without actually pushing the changes. This can be done using the `--dry-run` option:
+
+     ```bash
+     git push --dry-run
+     
+     
+     
+**Git Fork Overview:**
+
+1. **Definition:**
+   - A fork in Git refers to creating a personal copy of another user's repository. It is commonly used on hosted platforms like GitHub, GitLab, and Bitbucket.
+
+2. **Purpose:**
+   - Forking allows you to freely experiment with changes without affecting the original repository. It's a way to contribute to open-source projects, fix bugs, or propose new features.
+
+3. **Forking a Repository:**
+   - On platforms like GitHub, you can fork a repository by clicking the "Fork" button on the repository's page. This action creates a copy of the repository under your account.
+
+4. **Cloning a Forked Repository:**
+   - After forking, clone the repository to your local machine using `git clone`. This allows you to work on the code locally.
+
+     ```bash
+     git clone https://github.com/your-username/forked-repo.git
+     cd forked-repo
+     ```
+
+5. **Keeping Fork Updated:**
+   - To stay in sync with the original repository, add it as a remote:
+
+     ```bash
+     git remote add upstream https://github.com/original-owner/original-repo.git
+     ```
+
+   - Fetch and merge changes from the original repository:
+
+     ```bash
+     git fetch upstream
+     git merge upstream/main
+     ```
+
+6. **Pushing Changes to Fork:**
+   - After making changes locally, push them to your fork on the remote repository (e.g., GitHub):
+
+     ```bash
+     git push origin main
+     ```
+
+7. **Creating Pull Requests:**
+   - If you want to contribute your changes back to the original repository, create a pull request. This is a formal request to merge your changes.
+
+8. **Collaborative Development:**
+   - Forking is a common workflow for collaborative development, particularly in the context of open-source projects. It allows developers to contribute to projects without direct write access to the main repository.
+
+9. **Branches in Forks:**
+   - Each fork has its branches, allowing you to work on different features or bug fixes independently.
+
+10. **Caution with Force Push:**
+    - Be cautious with force pushing, as it can overwrite changes and lead to data loss. It's generally recommended to avoid force pushing, especially on shared branches.
+
+11. **Open Source Contribution:**
+    - Forking is a key concept in the open-source community, enabling a decentralized and collaborative approach to software development.
+
+Remember, the fork-and-pull model is just one way to contribute to projects, and other models like branch permissions and direct collaboration also exist depending on the project's workflow.

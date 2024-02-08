@@ -6,6 +6,17 @@ import java.util.Scanner;
 public class ArrayClass {
 
     public static void main(String[] args) {
+    	
+    	//In situation where the size of the array and variables of the array are already known, array literals can be used
+    	//Declaring array literal
+    	int[] intArray = {1,2,3,4,5,6};
+    	for (int arr2 : intArray) {
+
+   
+    	System.out.println(arr2);
+    	}
+    		
+    	
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the array");
 

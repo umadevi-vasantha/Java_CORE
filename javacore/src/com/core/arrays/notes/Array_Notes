@@ -82,3 +82,32 @@ While the contiguous memory storage is a common implementation strategy, it's no
 The Java language specification defines the behaviour and properties of arrays, but it does not mandate a specific implementation. As a result, the JVM may use various techniques for memory management, and as long as the specified behavior is maintained, the actual details of memory storage may vary across different JVM implementations.
 
 In Practical terms, You can treat Java arrays as if they are stored in contiguous memory, and the language guarantees that array elements are accessible through index notation. However, the exact memory management details are left to the JVM's discretion.
+
+
+---------------------------------------------------------------------------------------------
+
+Index : An refers to  a position or a numerical identifier that is used to access elements within a data structure, such as an array, list, or other indexed collections.
+The Index servers as a way to uniquely identify individual elements within the collection
+
+Index start from 0.
+
+
+------------------------------------------------------------------------------------------
+
+Multidimensional Array :
+
+Can be defined in simple words as array of arrays. Data in multidimensional arrays are stored in tabular form(in row major order)
+
+in row major order is a way of storing and traversing elements in a multidimensional array.This means that when we iterate through the elements
+of multidimensional array, you move through the rows first.
+
+
+1. Syntax
+
+datatype[1st dimension][2nd dimension]...[Nth dimension] array_name = new datatype[size1][size2]...[sizeN]
+
+datatype : Type of data to be stored in the array. for example int, char , object
+array_name : name of Array
+size1,,size2,,sizeN : Size of the dimension 
+
+2. Note in Multidimesional array , no of rows is mandatory, no of columns is not mandatory to mention while declaring the array.
