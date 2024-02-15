@@ -1,0 +1,69 @@
+What a String
+----------------------------------------
+1. In Java, the 'String' class is part of the Java Standard Library and is used to represent a sequence of characters.
+2. It is not a primitive data type like 'int' or 'double'; instead, it is a class that provides a rich set of methods for working with strings.
+3. The 'String' class is defined in the 'java.lang' package, which is automatically imported in Java programs.
+
+String Creation : String Literal
+----------------------------------------
+1. In Java, a string literal is a sequence of characters enclosed in double quotation marks. When a create a String using a string literal, Java
+automatically creates 'String' object for that literal. String literals are a convenient way to create strings in Java.
+
+2. String str1 = "Hello, World!";
+
+In this example, "Hello, World!" is a string literal, and Java creates a 'String' object with the value "Hello, World!" and assigns it to the variable 'str1'.
+This string is then stored in the string pool, a special area of memory used to optimize memory usage by reusing identical string literals.
+
+
+If you create multiple string literals with the same value, Java tries to reuse the same object in the string pool.This is known as string interning.
+For example:
+ String str1="Hello";
+ String str2="Hello";
+
+In this case,both 'str1' and 'str2' refer to the same string object in the string pool, as Java recognizes that the content of the two string literals is the same.
+
+It's important to note that string literals are immutable in Java.If we concatenate or modify a string created using a literal, a new string object is created, leaving the original string unchanged. 
+
+For example:
+
+String original = "Hello";
+String modified = original+ ", World!";
+
+In this case, the '+' operator creates a new string object with the concatenated value, but 'original' remains unchanged.
+
+Internal working of String:
+============================================
+1. String Polling:
+---------------------------
+String pooling, also known as the String Interning mechanism, is a process in Java where multiple references to the same string literal point to a single instance of the string in memory.
+The main purpose of string pooling is to conserve memory by reusing existing string objects rather than creating new ones with the same value. This process is particularly effective with string literals due to their immutability.
+
+a. String Pool in Heap:
+---------------------------
+The string poll is part of the heap memory in Java, specifically within the PermGen(Permanent Generation)space for older Java versions or the Metaspace in later Java versions.
+The PermGen space has been replaced by Metaspace in later Java versions.
+
+b. String Literal Creation:
+---------------------------
+i. When you create a string using a literal(e.g., 'String str = "Hello";') Java checks if an equivalent string already exists in the string pool.
+
+ii. If the string does not exist, a new string object is created in the pool,and its reference is returned.
+
+iii. If the string already exists, the existing refernce to that string is returned, and no new object is created.
+
+c. String Interning:
+--------------------------
+i.  String interning is the process of adding a string to the string pool explicitly.
+ii. You can intern a string explicity using the intern() method. This method returns a canonical representation of the string, either from the string pool or by adding it pool if not present.
+
+String str1 = "Hello"
+string str2 =new String("Hello").intern(); //Interning the string
+
+d. Memory Efficiency:
+i.  String pooling helps in conserving memory because multiple references to the same string literal share the same underlying object. This is particularly beneficial when dealing with a large number of strings with the same content.
+ii. For example, if you have multiple classes or instances using the same literal, they will all reference the same object in the string pool.
+
+5. Garbage Collection Consideration:
+Since string literals are stored in the string poll, they are not subject to garbage collection unless the class that contains them is also eligible for garbage collection. This can have implications for long-lived applications.
+
+

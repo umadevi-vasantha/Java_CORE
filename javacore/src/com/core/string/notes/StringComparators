@@ -1,0 +1,22 @@
+In Java, '==' and '.equals()' are used for comparing objects, but they behave differently depending on the context and the type of objects being compared. When it comes to comparing strings, the difference is crucial:
+
+1. '==' Operator:
+
+The '==' Operator checks for reference equality. 
+It determines whether two references point to the same memory location(i.e., the same object).
+For strings created using string literals, the java compiler tries to reuse existing string literals from the string pool.
+So, in some cases, '==' may work for string literals with same value.
+
+However, for strings created using the 'new' keyword or through runtime manipulation, '==' checks if references point to the same object, not whether the content is the same.
+
+String str1 = "Hello"
+String str2 = "Hello"
+String str3 = new String("Hello")
+
+Syso(str1==str2); //true (String literals often share the same reference)
+Syso(str1==str3); //false (Different objects with the same content)
+
+
+2. '.equals()' method:
+
+The '.equals()' method is part of the 'Object' class and is overridden by many classes, including 'String', to provide meaningful content comparis
