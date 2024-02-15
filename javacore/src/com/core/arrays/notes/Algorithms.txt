@@ -7,7 +7,12 @@ Time complexity is often expressed using Big O notation.
 
 Time complexity is a measure of how the running time of an algorithm grows as the input size increases.
 
+
+LINEAR SEARCH ::
+===============================================================================================================
+
 The time complexity of linear search is O(n), where "n" is the number of elements in the collection being searched. Here's a detailed explanation:
+
 
 Basic Operation:
 -----------------
@@ -32,3 +37,69 @@ As the number of elements in the collection (n) increases, the time taken by the
 Best-Case Time Complexity:
 -------------------------
 The best-case time complexity occurs when the target value is found at the beginning of the collection. In this case, the algorithm makes only one comparison, resulting in a best-case time complexity of O(1).
+
+
+
+BINARY SEARCH::
+===============================================================================================================
+
+Algorithm Steps:
+Initial Setup:
+-----------------------------------
+Binary search works on a sorted collection (e.g., an array or list).
+Set two pointers, low and high, initially pointing to the first and last elements of the collection.
+
+Midpoint Calculation:
+-----------------------------------
+Calculate the midpoint index, mid, as (low + high) / 2.
+
+Comparison:
+-----------------------------------
+Compare the element at the midpoint (arr[mid]) with the target value.
+
+Three Possible Outcomes:
+-----------------------------------
+If arr[mid] is equal to the target, the search is successful, and the index mid is returned.
+If arr[mid] is less than the target, the target must be in the right half of the collection. Update low to mid + 1 and repeat from step 2.
+If arr[mid] is greater than the target, the target must be in the left half of the collection. Update high to mid - 1 and repeat from step 2.
+
+Repeat:
+-----------------------------------
+Repeat steps 2-4 until the target is found or the search range becomes empty (low > high).
+
+If Not Found:
+-----------------------------------
+If the search range becomes empty, the target is not in the collection, and -1 is returned.
+
+The time complexity of binary search is as follows:
+
+Worst-case time complexity: O(log n)
+Average-case time complexity: O(log n)
+Best-case time complexity: O(1)
+
+Worst-Case Scenario:
+--------------------------------------
+The worst-case scenario occurs when the target element is located at one of the extremes of the array, or when the element is not present in the array. In this case, binary search continues to divide the array until the search space becomes empty, resulting in a logarithmic time complexity. The key comparison occurs at each step of the binary search, reducing the search space by half with each comparison.
+
+Best-Case Scenario:
+--------------------------------------
+The best-case scenario occurs when the target element is found at the midpoint of the array. In this case, binary search can immediately identify the target without further comparisons. The best-case time complexity is O(1), indicating constant time, as the algorithm can find the element with just one comparison.
+
+Binary search's efficiency in reducing the search space logarithmically makes it significantly faster than linear search, especially for large datasets. However, it's important to note that the collection must be sorted for binary search to work correctly.
+
+The notation "log(n)" refers to the logarithm of a number with respect to a given base. In the context of binary search and its time complexity analysis, the base of the logarithm is typically 2. So, "log(n)" denotes the logarithm to the base 2.
+
+Let's break down how "log(n)" works in the context of binary search:
+
+Binary Search Process:
+
+In each step of binary search, the search space is divided in half. This means that, with each comparison, the algorithm eliminates half of the remaining elements as a potential location for the target element.
+Logarithmic Growth:
+
+The number of comparisons needed to find an element in a sorted collection using binary search is logarithmic to the size of the collection. Specifically, it's logarithmic to the base 2.
+Example:
+
+Suppose you have a sorted array of 16 elements. With each comparison, you reduce the search space by half: 16 → 8 → 4 → 2 → 1. In this case, you need at most 4 comparisons to find the element. Mathematically, log₂(16) = 4.
+General Formula:
+
+The general formula for binary search time complexity is O(log₂ n), where "n" is the size of the collection. This indicates that the running time grows logarithmically with the size of the collection.
