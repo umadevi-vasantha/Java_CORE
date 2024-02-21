@@ -1,0 +1,48 @@
+General:
+------------------------------------------------------
+%s: String
+%d: Decimal integer (int)
+%f: Floating-point (float, double)
+%b: Boolean
+%c: Character
+%n: Platform-specific newline character
+
+
+Integer Formatting:
+-------------------------------------------------------
+%o: Octal integer
+%x or %X: Hexadecimal integer (lowercase or uppercase)
+
+
+Floating-Point Formatting:
+-------------------------------------------------------
+%f: Decimal floating-point
+%e or %E: Scientific notation (lowercase or uppercase)
+%g or %G: General format (decimal or scientific notation, depending on the value)
+
+
+Width and Precision:
+-------------------------------------------------------
+%4d: Minimum width of 4 characters for integers
+%.2f: Two decimal places for floating-point numbers
+
+
+Flags for Alignment and Padding:
+-------------------------------------------------------
+%-10s: Left-justified string within a 10-character width
+%+d: Display the sign for positive and negative numbers
+%05d: Zero-padding for integers (width of 5)
+
+
+Time and Date:
+-------------------------------------------------------
+%t: Prefix for date/time conversion characters
+%tH: Hour of the day (00-23)
+%tM: Minute of the hour (00-59)
+%tS: Second of the minute (00-60)
+%tB: Full month name (e.g., January)
+%tb: Abbreviated month name (e.g., Jan)
+%tY: Year with century as a decimal number
+
+These format specifiers are commonly used with the String.format method, System.out.printf, and similar formatting methods in Java. 
+They allow for precise control over the appearance of data in strings, making it easier to create well-formatted and readable output.

@@ -19,4 +19,18 @@ Syso(str1==str3); //false (Different objects with the same content)
 
 2. '.equals()' method:
 
-The '.equals()' method is part of the 'Object' class and is overridden by many classes, including 'String', to provide meaningful content comparis
+The '.equals()' method is part of the 'Object' class and is overridden by many classes, including 'String', to provide meaningful content comparison.
+For strings, .equals() compares the actual content of the strings, not their references. If the content is the same, it returns true; otherwise, it returns false.
+
+String str1 = "Hello";
+String str2 = "Hello";
+String str3 = new String("Hello");
+
+System.out.println(str1.equals(str2));  // true (Content is the same)
+System.out.println(str1.equals(str3));  // true (Content is the same)
+
+In summary:
+
+Use == for reference equality. It checks whether two references point to the same object in memory.
+Use .equals() for content equality. It checks whether the actual content of two objects is the same.
+For strings, .equals() is generally the preferred way to compare their content. Always use .equals() when comparing the content of objects, especially for strings, to ensure correct behavior regardless of how the objects were created or whether they share the same memory location.

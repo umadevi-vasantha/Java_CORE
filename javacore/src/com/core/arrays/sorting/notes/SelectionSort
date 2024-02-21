@@ -1,0 +1,130 @@
+#### Selection Sort #####
+
+Selection sort is a simple comparison-based sorting algorithm that works by dividing the input list into 2 parts:
+The sorted and the unsorted regions:
+The algorithm repeatedly selects the smallest(or largest) element from the unsorted region and moves it to the beginning(or end) of the sorted region.
+This process continues until the entire list is sorted.
+
+Algorithm :
+1. Initialization :
+a.The input list is divided into 2 parts: the sorted region and the unsorted region.
+b.Initially, the sorted region is empty, and the entire list is considered as the unsorted region.
+
+2. Selection of Minimum(or Maximum) Element:
+a. In each iteration, the algorithm finds the minimum(or maximum) elements in the unsorted region.
+
+3. Swap:
+a. The found minimum(or maximum) element is then swapped with the first(or last) element in the unsorted region.
+
+4. Expansion of the Sorted Region:
+a. The sorted region is expanded by moving its boundary one position to the right(or left)
+
+5. Repeat:
+a. Steps 2-4 are repeated until the entire list is sorted.
+
+Detailed Analysis:
+
+1. Number of Comparisons:
+a. In each iteration, the algorithm needs to find the minimum element in the unsorted region.
+b. For an array of length n, the first pass requires n-1 comparisons, the second pass n-2 and so on.
+c. The total number of comparisons is the sum of the first n-1 positive integers, given by the arithmetic series formula:
+n(n-1)/2
+
+2. Number of Swaps:
+a. In each iteration, a swap is performed to move the minimum element to the sorted region.
+b. The number of swaps is equal to the number of iterations.
+
+3. Total Operations(Comparisons + Swaps):
+a. The total number of operations is proportional to the sum of the arithmetic series for comparisons and swaps.
+
+4. Time Complexity:
+a. The dominant term in the term complexity is the n2/2 term from the comparisons(as n becomes large, the constant factor and lower-order terms become less significant).
+b. The time complexity of selection sort is O(n2).
+
+
+Time Complexity Analysis:
+
+Worst-Case : The worst-case occurs when the input is in reverse order. Selection sort performs the same number of comparisons and swaps regardless of the initial order of the input.
+The number of comparisons and swaps is n2/2 , leading to a time complexity of O(n2).
+
+Best-Case : The best-case occurs when the input is already sorted. Even though the number of comparisons remains the same, the number of swaps becomes minimal(0 in the first pass, 1 in the second, and so on). However, the dominant term is still n2//2, resulting in a time complexity of O(n2).
+
+Average-Case : The average-case time complexity is also O(n2) because the number of comparisons and swaps follows the same pattern regardless of the initial order of the input.
+
+=======================================
+
+In selection sort, the best-case time complexity occurs when the input array is already sorted. Let's go through the steps of selection sort in this best-case scenario and see why the time complexity remains \(O(n^2)\).
+
+### Best-Case Scenario:
+
+**Input:** An array of length \(n\) that is already sorted in ascending order.
+
+1. **First Pass:**
+   - The algorithm starts with the assumption that the first element is the minimum.
+   - It compares this element with the rest of the elements in the unsorted region.
+   - Since the array is already sorted, the first element is indeed the minimum in this pass.
+   - No swaps are performed.
+
+2. **Second Pass:**
+   - The algorithm moves to the second element, assuming it is the minimum.
+   - It compares this element with the rest of the elements in the unsorted region.
+   - Again, due to the sorted nature of the array, the second element is the minimum.
+   - No swaps are performed.
+
+3. **Remaining Passes:**
+   - In each subsequent pass, the algorithm continues to find the minimum element in the unsorted region.
+   - At each step, the assumed minimum element is indeed the minimum, and no swaps are needed.
+
+4. **Overall Analysis:**
+   - In the best-case scenario, the number of swaps is minimized because the array is already in the desired order.
+   - However, the number of comparisons remains the same: n(n-1)/2, where \(n\) is the number of elements in the array.
+
+### Time Complexity Analysis:
+
+While the number of swaps is minimized in the best case, the dominant factor affecting the time complexity is the number of comparisons. The time complexity is determined by the sum of the first \(n-1\) positive integers, which is given by the arithmetic series formula:
+
+
+
+This expression simplifies to \(O(n^2)\) when considering the dominant term as \(n\) becomes large. Despite the reduced number of swaps in the best-case scenario, the number of comparisons still grows quadratically with the size of the input, resulting in a quadratic time complexity.
+
+##### SPACE COMPLEXITY ######
+
+The space complexity of an algorithm refers to the amount of additional memory space it requires, and it is often expressed in terms of big-O notation. For selection sort, the space complexity is relatively simple and is considered to be O(1), which means it uses a constant amount of additional space.
+
+In selection sort, the primary operations involve iterating through the array, finding the minimum element, and swapping elements. These operations are performed in place, meaning that the algorithm doesn't require additional memory that grows with the size of the input. The only extra space used is for a few variables (like loop indices and temporary variables for swapping), and this amount of space is constant regardless of the size of the array.
+
+In summary, the space complexity of selection sort is O(1), making it an "in-place" sorting algorithm. This characteristic is beneficial when working with memory-constrained environments or situations where minimizing additional space usage is important.
+
+
+
+
+Note: Selection Sort is not STABLE ALGORITHM
+
+
+
+#### Alernate Names for Selection Sort #####
+
+Selection sort is also known by the following alternative names:
+
+1. **Min-Max Sort:**
+   - This name emphasizes the process of selecting the minimum (or maximum) element in each pass to build the sorted portion of the array.
+
+2. **Simple Sort:**
+   - Selection sort is often referred to as a simple sorting algorithm due to its straightforward and easy-to-understand implementation.
+
+3. **Exchange Sort:**
+   - The term "exchange" refers to the swapping of elements in the unsorted region, as the algorithm selects and moves the minimum (or maximum) element to its correct position.
+
+4. **Sorting by Selection:**
+   - This name reflects the key characteristic of the algorithm, which involves selecting elements from the unsorted region and placing them in the sorted region.
+
+5. **Trickle Sort:**
+   - This name is less commonly used, but it emphasizes the way the smallest (or largest) elements gradually move through the unsorted region and "trickle" to their correct positions.
+
+6. **Sift Sort:**
+   - Similar to "trickle sort," the term "sift" emphasizes the movement of elements in the unsorted region as the smallest (or largest) element is sifted to its correct position.
+
+7. **Shuttle Sort:**
+   - This name implies the back-and-forth movement of elements between the sorted and unsorted regions as the algorithm progresses.
+
+It's important to note that while these alternative names may be used informally, "selection sort" is the most commonly recognized and accepted term for this particular sorting algorithm.

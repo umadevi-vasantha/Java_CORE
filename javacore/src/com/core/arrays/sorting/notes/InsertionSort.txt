@@ -1,0 +1,135 @@
+Insertion Sort is a simple sorting algorithm that builds the final sorted array one element at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort. However, it performs well for small datasets or lists that are almost sorted.
+
+Basic Idea:
+The basic idea behind Insertion Sort is to divide the array into a sorted and an unsorted region.
+Initially, the sorted region contains only the first element of the array, and the rest of the elements are in the unsorted region.
+The algorithm iterates over the unsorted region, taking one element at a time and inserting it into its correct position in the sorted region.
+
+
+Algorithm Steps:
+Start with the second element: Assume the first element is already sorted. Take the second element and compare it with the first.
+
+Insert into the correct position: If the second element is smaller than the first, swap them. Otherwise, leave them as they are. Now, the first two elements are sorted.
+
+Extend the sorted region: Take the third element and compare it with the second element, then with the first. Insert it into the correct position in the sorted region.
+
+Repeat until the array is sorted: Continue this process for each element in the unsorted region until the entire array is sorted.
+
+Time Complexity :
+
+#### BEST CASE #####
+
+In the best case scenario for Insertion Sort, the array is already sorted, or nearly sorted. This means that when the algorithm goes through each element of the array, it finds that the element is greater than or equal to all the elements before it in the sorted region. As a result, no or minimal shifting of elements is required during the insertion process.
+
+Let's break down the best case time complexity analysis step by step:
+
+1. **Outer Loop Iterations:**
+   - The outer loop runs for each element in the array, starting from the second element (index 1).
+   - For the first element, there is no comparison or shifting required, as it is assumed to be in the sorted region.
+
+   In the best case, the outer loop runs \(n-1\) times, where \(n\) is the number of elements in the array.
+
+   Time complexity contribution from the outer loop in the best case: \(O(n)\).
+
+2. **Inner Loop Iterations:**
+   - The inner loop compares the current element with the elements in the sorted region and shifts them as needed.
+   - In the best case, when the array is already sorted, the inner loop may terminate early, as there are no elements greater than the current element in the sorted region.
+
+   The number of iterations for the inner loop in the best case is minimized, resulting in fewer operations.
+
+   Time complexity contribution from the inner loop in the best case: \(O(1)\) for each iteration.
+
+3. **Overall Best Case Time Complexity:**
+   - The overall best case time complexity is determined by the combination of the outer and inner loop complexities.
+   - In the best case, the inner loop has minimal work to do, and the overall time complexity is dominated by the linear (non-nested) nature of the outer loop.
+
+   The overall best case time complexity for Insertion Sort is \(O(n)\).
+
+To summarize, when the array is already sorted or nearly sorted, Insertion Sort performs optimally with a time complexity of \(O(n)\) in the best case. However, in the average and worst cases, where more comparisons and element shifts are required, the time complexity is \(O(n^2)\).
+
+
+#### WORST CASE #####
+
+In the worst-case scenario for Insertion Sort, the input array is in reverse order. This means that for each element in the unsorted region, it needs to be compared and potentially swapped with every element in the sorted region, leading to a maximum number of comparisons and shifts. Let's analyze the worst-case time complexity step by step:
+
+1. **Outer Loop Iterations:**
+   - The outer loop runs for each element in the array, starting from the second element (index 1).
+   - For each iteration, the inner loop may have to perform maximum comparisons and shifts.
+
+   In the worst case, the outer loop runs \(n-1\) times, where \(n\) is the number of elements in the array.
+
+   Time complexity contribution from the outer loop in the worst case: \(O(n)\).
+
+2. **Inner Loop Iterations:**
+   - The inner loop compares the current element with each element in the sorted region until it finds the correct position or reaches the beginning of the array.
+   - In the worst case, when the array is in reverse order, the inner loop performs \(i\) comparisons and shifts for the \(i\)-th element in the unsorted region.
+
+   The number of iterations for the inner loop in the worst case is given by the sum of the first \(n-1\) positive integers: \(1 + 2 + 3 + \ldots + (n-1) = \frac{n \cdot (n-1)}{2}\).
+
+   Time complexity contribution from the inner loop in the worst case: \(O(n^2)\).
+
+3. **Overall Worst Case Time Complexity:**
+   - The overall worst-case time complexity is determined by the combination of the outer and inner loop complexities.
+   - In the worst case, the inner loop has to perform a quadratic number of operations due to the reverse order of the array.
+
+   The overall worst-case time complexity for Insertion Sort is \(O(n^2)\).
+
+To summarize, when the array is in reverse order or in a state where maximum comparisons and shifts are required for each element, Insertion Sort exhibits a worst-case time complexity of \(O(n^2)\). This makes it less efficient compared to more advanced sorting algorithms for large datasets.
+
+
+##### SPACE COMPLEXITY #####
+
+The space complexity of an algorithm refers to the amount of additional memory space it requires to complete its execution, and it is typically expressed in terms of big O notation.
+
+For Insertion Sort, the algorithm is considered an in-place sorting algorithm. In-place sorting means that the sorting is performed directly on the input array without requiring additional memory proportional to the size of the input. Instead, Insertion Sort uses a constant amount of extra memory, regardless of the size of the array.
+
+### Space Complexity of Insertion Sort:
+
+- **Space Complexity:** \(O(1)\)
+
+Insertion Sort operates by iterating through the array and rearranging elements within the array itself, without needing any additional data structures. The amount of extra memory used by the algorithm is constant, regardless of the size of the input array. This is achieved by performing swaps and comparisons directly within the existing array, making Insertion Sort an in-place sorting algorithm with a space complexity of \(O(1)\).
+
+In summary, Insertion Sort is space-efficient as it does not require additional memory proportional to the input size, and its space complexity is \(O(1)\).
+
+
+##### Alernate Names of INSERTION SORT ######
+
+Insertion Sort is a well-known algorithm, and while it is primarily referred to by its standard name, there might be occasional variations or regional terms used to describe it. Here are a few alternate or synonymous names for Insertion Sort:
+
+1. **Straight Insertion Sort:** Emphasizes the straightforward nature of the sorting process.
+  
+2. **Simple Sorting:** Reflects the simplicity of the algorithm.
+
+3. **Building-Block Sort:** Describes how the algorithm builds the sorted portion of the array gradually.
+
+4. **Sinking Sort:** Refers to the process of "sinking" or moving elements to their correct positions.
+
+5. **Insertion Exchange Sort:** Highlights the use of element insertion and exchange operations.
+
+6. **Card Sort:** Historically, Insertion Sort has been known as a card sorting algorithm, as it mimics how one might sort a deck of cards.
+
+7. **Natural Order Sort:** Suggests that the algorithm sorts elements in a way that mimics their natural order in the array.
+
+Remember that while these names may be used occasionally, "Insertion Sort" is the standard and widely accepted term for this sorting algorithm.
+
+
+##### ADVANTAGES #####
+
+Insertion Sort has certain advantages that make it a suitable choice in specific scenarios:
+
+1. **Simple Implementation:** Insertion Sort is one of the simplest sorting algorithms to understand and implement. It involves a basic mechanism of iterating through the elements and inserting each element into its correct position in the sorted region.
+
+2. **Efficient for Small Datasets:** Insertion Sort performs well when dealing with small datasets or lists. In cases where the number of elements is relatively small or the list is already partially sorted, Insertion Sort can be more efficient than more complex algorithms.
+
+3. **Adaptive Algorithm:** Insertion Sort is adaptive, meaning its performance is better when the input data is partially ordered. If the array is already partially sorted or nearly sorted, Insertion Sort requires fewer comparisons and swaps, making it more efficient in those cases.
+
+4. **Online Algorithm:** Insertion Sort can be easily adapted to handle streaming data or elements that arrive one at a time. It allows for sorting a list as new elements are received without having to wait for the entire list to be available.
+
+5. **Stable Sorting Algorithm:** Insertion Sort is a stable sorting algorithm, meaning it maintains the relative order of equal elements in the sorted output as they were in the input array. This property is important in certain applications.
+
+6. **In-Place Sorting:** Insertion Sort is an in-place sorting algorithm, meaning it doesn't require additional memory proportional to the size of the input. It operates directly on the input array, making it memory-efficient.
+
+7. **Low Overhead:** Insertion Sort has low overhead compared to more complex sorting algorithms. It has a relatively small constant factor associated with its time complexity, making it practical for small datasets.
+
+8. It works well on partially sorted algorithm and mostly used in HYBRID sorting algorithm.
+While Insertion Sort has these advantages, it is essential to note that for larger datasets, more advanced sorting algorithms like quicksort or mergesort are generally more efficient. Insertion Sort's time complexity is O(n^2) in the worst case, which can become a limitation for large datasets.
