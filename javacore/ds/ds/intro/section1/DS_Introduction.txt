@@ -1,0 +1,68 @@
+***
+1. What is Data Structure?
+Data Structure are different ways of organizing the data on computer/system. so that the data can be used in efficient way.
+
+All applications are dealing with data , some operations will be performed on the given data
+Before processing the data we have to organize the data in certain way in order to make the process efficient.
+
+From Applications point of view the efficiency and performance of the software depends on, how the data is stored, organized, grouped together during the program execution.
+***
+
+***
+2. What is Algorithm?
+Set of instruction to perform a Task
+Set of instruction/rules for a computer program to accomplish a Task
+
+Sample algorithm used in big companies
+How to find the shortest path on the Google Map -  Graph algorithms
+How to Google and Facebook transmit live video across the internet? - Compression algorithm
+
+What makes a good algorithm? Correctness and Efficiency
+***
+
+***
+Why are Data Structures and Algorithms important??
+As a software or computer science , responsibility is to perform operations on data. First we take data as input ,then we process it, and then we give back the processed data as output.
+So it make the software work efficiently its important to make the processing part efficient(We need to optimize the processing part) , there comes the importance of the Data Structure and Algorithm.
+***
+
+***
+Types of Data Structure
+
+Data Structures can be mainly classified into,
+
+Primitive Data Structures:
+The Data Structure which built which are basic data structures which are building blocks of any program.
+ Integer
+ Float
+ Character
+ Boolean
+
+Non Primitive data Structures:
+There are user defined data structures and they are derived from Primitive data structures.
+ Linear Data Structures:
+ In Linear Data Structures the items are arranged in linear sequential manner.And they can be further classified
+  A> Static: Array
+  In Static Linear Data Structures the sizes and structures associated with memory location is Fixed.
+  B> Dynamic: Linked List, Stack, Queue
+ 
+ Non Linear Data Structures:
+In Non Linear Data Structures the items are not arranged in sequential manner.
+  A> Tree
+  B> Graph
+  
+ ***
+ 
+ ***
+ Types of Algorithm
+ 
+ Based on Similar Problem solving Approach
+ 
+ Simple Recursive Algorithm
+ Divide and Conquer Algorithm
+ Dynamic Programming Algorithm 
+ Greedy Algorithm
+ Brute Force Algorithm
+ Randomized Algorithm
+ 
+ 

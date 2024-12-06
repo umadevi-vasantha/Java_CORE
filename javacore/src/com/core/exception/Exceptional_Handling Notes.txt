@@ -1,0 +1,118 @@
+Exception::
+
+Before we start with the exception we will understand the the basics
+Error : An error is any issue or problem in a program in a program that causes it behave unexpectedly, produce incorrect results, or terminate abnormally.
+
+In Java, errors are generally classified into 3 main types;
+
+1. Compile time errors: These errors occur when you compile your code. They prevent the program from compiling successfully and typically result from syntax errors or incorrect use of language constructs.
+Common examples include:
+
+Syntax errors: Missing semicolons, mismatched brackets, misspelled keywords etc.
+Type errors: Assigning a value of wrong type to a variable(eg. assigning a string to integer variable.
+Declaration errors: Using a variable that has'nt been declared.
+
+
+2. Runtime Errors: These errors occurs while the program is running and usually result in abnormal termination of the program. They are often caused by unforeseen circumstances during execution. examples include.
+
+NullPointer Exception: Accessing or modifying an object or variable that has'nt been initialized.
+Arithmetic Exception: Division by zero.
+ArrayIndexOutOfBoundsException: Accessing an array with illegal index.
+ClassCastException: Improper casting.
+
+3. Logical Errors: These errors occurs when the program runs without crashing but produces incorrect or unexpected results. Logical errors are often the hardest to detect because  they don't produce error messages; instead , they cause the program to behave incorrectly;
+
+Incorrect Algorithms, Flawed logic, off-by-one errors are common errors.
+
+
+
+What is an Exception:
+
+An exception is an event that occurs during the execution of a program that disrupts the normal flow of instructions. In Java, exception is an unwanted or unexpected event which occurs during the execution of program. i.e at runtime. That disrupts the normal flow of the program instructions.
+Exceptions can be caught and handled by the program.
+
+Types of Exceptions:
+a. Checked Exceptions: 
+1. These are exceptions that are checked at compile-time.
+2. They must be either caught or declared in the method using throws.
+Examples: IOException, SQLException.,classNotFoundException
+3. We must handle these checked exceptions using 'try-catch' block or propagate then using the throws keyword in the method declaration.
+Why they Exist: Checked exceptions are used for scenarios where the programmer should explicitly handle the possibility of failure. For instance, when dealing with file operations network access or database connectivity, where the failure is not in the programmer's control but still needs to be managed.
+
+
+b. Unchecked Exceptions: 
+1.These are exceptions that occur at runtime and are not checked at compile time. 
+2.They are usually caused by programming errors.
+Examples: NullPointerException, ArrayIndexOutOfBoundsException, ArithmeticException
+Handling: Unlike checked exceptions, you we are not force to handle unchecked exceptions. However, you can still handle using 'try-catch' blocks if needed.
+Why they Exist: Unchecked exceptions indicate programming errors that usually should'nt happen if they code is correct. For instance, accessing an array with an invalid index or diving by zero are issues that should be fixed by the programmer.
+
+
+c. Errors: These are serious issues that are typically beyond the control of the program(e.g, JVM-related errors). They usually signal that application should not attempt to handle them.
+Examples: OutOfMemoryError, StackOverflowError.
+
+
+Exception Hierarchy:
+All exception classes are subclasses of the throwable class.
+1. Throwable
+	a.Exception
+		i) Checked Exceptions
+		ii) Unchecked Exceptions
+	b.Error
+	
+
+How does JVM Handle an exception??
+
+
+Default Exception Handling : Whenever inside a method, if an exception has occured, the method creates an object known as an "Exception Object" and hands it off to the runtime system(JVM).
+The Exception object contains the name,description of the exception and the current state of the program where the exception has occured.
+
+Creating the exception object and handling it in the runtime system is called throwing an "Exception". 
+There might be a list of the methods that had been called to get to the method where an exception occured. This ordered list of methods is called "CALL STACK".
+The run-time system searches the call stack to find the method that contains a block of code that can handle the occured exception. The block of the code is called an "EXCEPTION HANDLER".
+The run-time system starts searching from the method in which the exception occured and proceeds through the call stack in the reverse order in which methods were called.
+If the runtime system searches all the methods on the call stack and could'nt have found the appropriate handler, then the runtime system handover the exception object to the "default exception handler", which is part of the runtime system. This handler prints the exception information in the following format and terminates the program abnormally.
+
+'''Exception in thread "XXX" name of exception: Description
+//call stack'''
+
+If it finds an appropriate handler, then it passes the occured exception to it. An appropriate handler means the type of exception object thrown matches the type of exception object it can handle.
+
+	
+Handling Exceptions:
+=============================
+
+The Try-Catch Block:
+1. The "try" block contains that code that might throw an exception.
+2. The "catch" block is used to handle the exception. You can have multiple catch blocks to handle different types of exceptions.
+3. The Finally Block: The "finally" block is used to execute important code such as closing resources, irrespective of whether an exception was thrown or caught.
+The finally block is optional, but it will always execute if present.
+
+
+Try-with-Resources:
+1. Introduced in Java7, the try-with-resources statement ensures that each resource is closed at the end of the statement.
+2. A resource is any object that must be closed after it is used(eg. files streams).
+
+try(ResourceType resource= new ResourceType()){
+//use the resource
+}catch(ExceptionType e){
+//Handle exception
+}
+
+
+Throwing Exceptions:
+1. The throw keyword is used to explicitly throw an exception.
+Syntax:
+throw new ExceptionType("Error message");
+2. You can throw both checked and unchecked exceptions using throw.
+
+Method Signature with throws
+If a methods can throw a checked exception, it must declare this possibility in its method signature using throws keyword.
+
+public void methodName() throws ExceptionType{
+//Method implementation
+}
+
+
+
+

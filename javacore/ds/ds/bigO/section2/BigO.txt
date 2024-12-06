@@ -1,0 +1,154 @@
+=>Time complexity is a concept used in computer science to analyze and describe the efficiency of an algorithm in terms of the amount of time it takes to complete bases on the size of the input.
+=>It is a way to estimate the growth of an algorithm's running time as the input size increases.
+
+
+Time complexity ! = Actual runtime taken.
+
+=>Time Complexity and the actual runtime of an algorithm are related concepts but not the same thing.
+
+Time Complexity : It is a theoretical concept that describes the growth rate of an algorithm's running time as a function of the input size.
+=> It provides an upper bound on the running time in terms of the input size but does not give an exact measure of the actual time it takes for an algorithm to run.
+
+Runtime : This is the actual time it takes for a specific instance of an algorithm to execute on a particular machine with a specific input.
+=> The runtime depends not only on the algorithm itself but also on factors like the hardware, compiler optimizations, and other system=specific details.
+
+
+Time complexity is usually measured in terms of the number of basic operations performed by an algorithm.
+
+Key Assumptions and factors calculating time complexity:
+
+1. Input Size : Time complexity is expressed as a function of the input size (often denoted as "n".)
+=> The growth rate of the running time with respect to the input size is the primary focus.
+
+2. Constant factors and Lower Order Terms: Time complexity focuses on the dominant term or the most significant factor in the growth rate.
+=> Constant factors and lower-order terms are often ignored in Big ) notation.
+=> For example if an algorithm as time complexity has O(2n^2+4n+5). it is simplifies to O(n2).
+
+3. Worst-Case Analysis: Time complexity often refers to the worst-case scenario, which represents the maximum running time an algorithm might have for a given input.
+=> This provides an upper bound on the algorithm's performance.
+
+4. Asymptotic Analysis(Asymptotic analysis is a method used in computer science and mathematics to describe the efficiency of algorithms and their behavior as the input size approaches infinity. 
+It focused on how the algorithm's performance scales with larger and larger inputs, providing insights into its growth rate).
+=>Time complexity is concerned with the behavior of an algorithm as the input size approaches infinity. It provides an asymptotic upper bound on the growth rate.
+=>Constants and lower-order terms are often ignored in this analysis as they become less significant as the input size increases.
+
+
+Big O Notation(O): The Big O notation provide an upper bound on the growth rate of an algorithm's running time.
+Big Omega Notation(Ω) : The Big Omega notation provides a lower bound on the growth rate of an algorithm's running time.
+Big Theta Notation(Θ): The Big Theta notation provides a tight bound on the growth rate of algorithm's running time, combining aspects of both Big O and Big Omega.
+
+---------------------------------------------------------------
+***
+1>What is Big O??
+
+Big O is the language and metric we use to describe the efficiency of algorithms.
+
+2> Time Complexity??
+A way of showing how the runtime of function increases as the size of the input increases.
+
+Note: When we look at the time complexity, we don't measure the time, we measure the number of Operations.
+And the reason why we do this is that if we took the same code and run it in the faster computer, its obvious
+that it's going to take less time. So here, instead of taking the time, we need to look at the number of the operations.
+So if we run our code in the faster computer or in the slower computer, the number of operations will remains same.
+So with big O, we are measuring the number of operations.
+
+3> Space Complexity??
+Space complexity is the amount of the memory that code uses
+
+4>***Real life Example:
+
+If we take a CAR, a car may use 20 liters of fuel to Cover a x distance in a High Traffic condition
+Same car may use 10 liters of fuel to cover same x distance in a Highway
+And also the same car may use 15 liters of fule to cover same x distance in a mixed condition
+
+So the efficiency of the CAR is changed based the raod condition here.
+
+Similarly , Algorithm can perform differently based on the conditions that is given. We have three scenarios when measuring the efficiency of algorithm.
+
+1> Best Case (Big Omega) - It is a complexity that is going to be least more than the best case
+2> Average Case (Big theta) - It is a complexity that is within the bounds of the worst and the best cases.
+3> Worst Case (Big O) - It is a complexity that is going to be less or equal to the worst case
+
+Example we are considering the below Array,
+
+arr= [1,2,3,4,5,6,7,8]
+
+Best Case: if we need to find the value=1, We are just going to straight away at the beginning. Takes less time. And number of operations
+Average Case : If we need to find the value=4, We are going to find the number in middle. 
+Worst Case: If we need to find the value=8, We have to traverse all along the array until the last.
+
+
+5>***Time Complexity/ Run Complexity O(1):
+There are many time complexities
+1> Constant time complexities/ Order of one complexity
+->This means that for any given input, the execution time will not change .i.e, It remains constant.(No of operations will not change)
+->Eg:
+public static int multipleNumbers(int n){
+return n*n;
+}
+
+Here if we pass any value here , the number of operations/time required remains constant..As the number of operations is going to be 1. And that's why the time complexity
+for this method is going to be one time complexity.
+
+2> Run Complexity O(N) / Linear Time complexity:
+Here the time complexity will grow in direct proportion of size of the input data.
+Eg:
+public static void printNumbers(int n){
+for(int i=0;i<n;i++){
+syso(i);
+}}
+
+3> Run Complexity O(N^2) /Quadratic Time complexity:
+Here the time required to execute the algorithm increases quadratically as the size of the input grows.
+Eg:
+
+public static void printNumbers(int n){
+for(int i=0;i<n;i++){
+for(int j=0'j<n;j++{
+syso(i+" "+j);
+}}}
+
+4> Run Complexity Log(N) / Logarithmic Time complexity:
+Here the time taken to complete the task increases logarithmically with the size of the input(n).
+In Simpler terms, as the input grows, the time it takes to solve the problem increases at a slower rate than size of the input itself,
+
+6> Space Complexity:
+Space complexity is a measure of the amount of the working storage an algorithm needs.
+That means how much memory in the worst case is needed at any point in the algorithm.
+As with the time complexity here also, we are concerned how the space that is needed grows as the size of the input grows.
+
+How to calculate/measure the Big O?
+
+Rule1:
+Any Assignment statements and if statements that are executed once regardless of the size of the problem - Complexity = O(1)
+Rule2:
+A simple "for" loop from ) to n (with no internal loops): Complexity = O(n)
+Rule3:
+A nested loop of same type takes quadratic time complexity: Complexity = O(n^2)
+Rule4:
+A loop, in which the controlling parameter is divided by two at each step: Complexity = O(log n)
+Rule5:
+When dealing with multiple statements, just add them up.
+
+
+Eg:
+public static void findTotalNumber(int n){
+var total=0;--------------------------------------------------> o(1)
+for(int i=0 ; i<=n ; i++){------------------O(n)
+total+=i;-----------------------------------O(1)--------------> O(n)
+}
+if (total >100) { --------------------------------------------> o(1)
+System.out.println("The total number is greater than 100");---> O(1)
+}else{
+System.out.println(total);-------------------------------------> O(1)
+}
+}
+
+O(1)+O(N)+O(1)+O(1)+O(1)= O(N) removing the less dominant terms
+ 
+
+
+
+
+
+

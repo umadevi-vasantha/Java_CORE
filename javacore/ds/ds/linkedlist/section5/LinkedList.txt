@@ -1,0 +1,92 @@
+Linked List:
+Linked List is a form of a sequential collection and it does not have to be in order. 
+A Linked list is made up if independent nodes that may contain any type of data and each node has a reference to the next node in the link.
+
+A  linked list composed of several key components that together form a versatile and dynamic data structure.
+Node :
+=====
+The basic unit of a linked list. Each node contains two main parts:
+Data: The value or information stored in the node.
+Reference(Link): A pointer or reference to the next node in the list(and in the case of doubly linked lists, also a reference to the previous node).
+
+Head :
+=====
+A reference to the first node in the linked list. The head is crucial for accessing the list as it provides the entry point.If the list is empty, the head is typically set to null.
+
+Tail:
+A reference to the last node in the linked list. Having a tail reference can make certain operations, such as adding a new node at the end of the list, more efficient. 
+
+Linked List in Memory:
+
+a> Linked list in memory is not contagious.
+b> Linked lists in memory are not stored contiguously; instead, each node is allocated separately in memory, and nodes are linked together using pointers or references.
+c> This characteristic differentiates linked lists from arrays, which are stored in contiguous memory locations
+d> Head -> [0x100: data=1, next=0x200] -> [0x200: data=2, next=0x300] -> [0x300: data=3, next=null]
+
+Advantages and Disadvantages:
+Advantages:
+===========
+Dynamic Size: Linked lists can grow and shrink dynamically as nodes are added or removed.
+Efficient Insertions/Deletions: Adding or removing nodes does not require shifting elements, as would be necessary in an array.
+
+Disadvantages:
+=============
+Dynamic Size: Linked lists can grow and shrink dynamically as nodes are added or removed.
+Efficient Insertions/Deletions: Adding or removing nodes does not require shifting elements, as would be necessary in an array.
+
+
+
+Linked List Vs Array
+=========================
+Feature                 | Array                                                         | 
+-------------------------|---------------------------------------------------------------|
+Independence of Elements | Elements are tightly packed in contiguous memory, any single element cannot be removed without affecting the structure. | 
+Definition          | A data structure with contiguous memory locations and fixed size once declared. | 
+Memory Allocation   | Contiguous memory allocation, allocated at compile time.      | 
+Access Time         | O(1) for accessing elements by index.                         | 
+Insertion           | O(n) for insertion (in the worst case), may require shifting elements. | 
+Deletion            | O(n) for deletion (in the worst case), may require shifting elements. | 
+Memory Usage        | Less memory overhead, stores only data.                       | 
+Flexibility         | Fixed size, resizing involves creating a new array and copying elements. | 
+Traversal           | Can be traversed using a simple loop with index.              | 
+Use Cases           | Suitable for scenarios needing fast access to elements by index. | 
+
+
+Feature                 | Linked List                                                    |
+-------------------------|----------------------------------------------------------------|
+Independence of Elements | Each element (node) is independent, can be added or removed without affecting the structure of other elements. |
+Definition          | A data structure with nodes containing data and references, with dynamic size. |
+Memory Allocation   | Non-contiguous memory allocation, nodes are allocated on the heap at runtime. |
+Access Time         | O(n) for accessing elements, requires traversal from the head. |
+Insertion           | O(1) for insertion at the beginning, O(n) at the end or a specific position. | 
+Deletion            | O(1) for deletion at the beginning, O(n) at the end or a specific position. |
+Memory Usage        | More memory overhead, stores data and references.             | 
+Flexibility         | Dynamic size, can easily grow and shrink by adding or removing nodes. |
+Traversal           | Requires traversal from the head, following references to the next nodes. |
+Use Cases           | Suitable for scenarios with frequent insertions and deletions. |
+
+
+
+
+ 
+Types of Linked List:
+============
+1. Singly Linked List
+2. Circular Singly Linked list
+3. Doubly Linked List
+4. Circular Doubly Linked List
+
+
+1.Singly Linked List:
+Each node contains data and a reference to the next node.
+Traversal is only possible in one direction.
+
+2.Doubly Linked List:
+Each node contains data, a reference to the next node, and a reference to the previous node.
+Allows traversal in both forward and backward directions.
+
+3.Circular Linked List:
+The last node in the list points back to the first node, forming a circle.
+Can be singly or doubly linked.
+
+

@@ -1,0 +1,42 @@
+=>Time complexity is a concept used in computer science to analyze and describe the efficiency of an algorithm in terms of the amount of time it takes to complete bases on the size of the input.
+=>It is a way to estimate the growth of an algorithm's running time as the input size increases.
+
+
+Time complexity ! = Actual runtime taken.
+
+=>Time Complexity and the actual runtime of an algorithm are related concepts but not the same thing.
+
+Time Complexity : It is a theoretical concept that describes the growth rate of an algorithm's running time as a function of the input size.
+=> It provides an upper bound on the running time in terms of the input size but does not give an exact measure of the actual time it takes for an algorithm to run.
+
+Runtime : This is the actual time it takes for a specific instance of an algorithm to execute on a particular machine with a specific input.
+=> The runtime depends not only on the algorithm itself but also on factors like the hardware, compiler optimizations, and other system=specific details.
+
+
+Time complexity is usually measured in terms of the number of basic operations performed by an algorithm.
+
+Key Assumptions and factors calculating time complexity:
+
+1. Input Size : Time complexity is expressed as a function of the input size (often denoted as "n".)
+=> The growth rate of the running time with respect to the input size id the primary focus.
+
+2. Constant factors and Lower Order Terms: Time complexity focuses on the dominant term or the most significant factor in the growth rate.
+=> Constant factors and lower-order terms are often ignored in Big ) notation.
+=> For example if an algorithm as time complexity has O(2n^2+4n+5). it is simplifies to O(n2).
+
+3. Worst-Case Analysis: Time complexity often refers to the worst-case scenario, which represents the maximum running time an algorithm might have for a given input.
+=> This provides an upper bound on the algorithm's performance.
+
+4. Asymptotic Analysis(Asymptotic analysis is a method used in computer science and mathematics to describe the efficiency of algorithms and their behavior as the input size approaches infinity. 
+It focused on how the algorithm's performance scales with larger and larger inputs, providing insights into its growth rate).
+=>Time complexity is concerned with the behavior of an algorithm as the input size approaches infinity. It provides an asymptotic upper bound on the growth rate.
+=>Constants and lower-order terms are often ignored in this analysis as they become less significant as the input size increases.
+
+
+Big O Notation(O): The Big O notation provide an upper bound on the growth rate of an algorithm's running time.
+Big Omega Notation(Ω) : The Big Omega notation provides a lower bound on the growth rate of an algorithm's running time.
+Big Theta Notation(Θ): The Big Theta notation provides a tight bound on the growth rate of algorithm's running time, combining aspects of both Big O and Big Omega.
+
+
+Little O Notation(O) : The little notation represents an upper bound that is not asymptotically tight.
+

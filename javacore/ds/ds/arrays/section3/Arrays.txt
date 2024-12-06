@@ -1,0 +1,204 @@
+Before starting with Arrays ..what is data structure will see:
+
+1. A data structure is a way of organizing and storing data to perform operations efficiently.
+Data Structures are essentials in computer science and programming because they enable 
+enable efficient data storage, retrieval and manipulation, which inturn impacts the efficiency of algorithms.
+
+There are various types of data structures, each designed for specific purpose. Here are some common types of data structures:
+
+Arrays, Linked Lists, Stacks , Queues , Trees, Graph, Hash Tables, Heap ,Sets , Map/Dictionaries.
+
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Arrays : It is Data Structure that allows you to store multiple values of the same type in single variable.
+Arrays are useful when you need to work with collection of similar elements, such as list of integers, characters, or objects.
+
+Properties of Array:
+a> Array can store data of specified type.
+b> Elements of an array are located in a contiguous
+c> Each element of an array has a unique index
+d> The Size of an array is predefined and cannot be modified.
+
+
+An array is a data structure consisting of a collection of elements, each identified by at-least one array index or key.
+An array is stored such that the position of each element can be computed from its index by a mathematical formula.
+
+1. Grouping Elements :
+Arrays provide a way to group related elements together . For example , if we want to store the scores of students in a class, you can use array to keep all the scores in one place
+
+2. Random Access :
+Elements in an array are accessed using index,and it allows for fast and direct access to any elements in the array. The index start at 0,
+
+3.Efficient Memory usage :
+Arrays have fixed size, which means they allocate contiguous memory locations for elements. This results in efficient memory usage, making it suitable for scenarios where memory efficiency is crucial.
+
+4. Iterating over Elements:
+Arrays make it easy to iterate over all elements using loops. This simplifies operations that need to be performed on each elements in the array.
+
+5.Parameter passing :
+Arrays are often used to pass a collection of values to a method .Instead of passing individual parameters, you can pass an making the code more concise and manageable.
+
+6.Dynamic data storage :
+While arrays have fixed size, Java provides other data structures like ArrayList which is on top of arrays but offer dynamic resizing, making them more flexible for scenariors where the size of the collection may change
+
+---------------------------------------------------------------------------------------------------------------------------
+Types of ARRAYs
+
+1. Linear/One dimensional Array : These are the one which as single row and multiple columns.
+2. A multidimensional array in programming refers to an array that has more than one dimension, In simpler terms, it's an array , where each "dimension" adds another level of nested arrays"
+We have 2-dimensional, 3-dimensional, N-dimensional.
+
+Array in Memory:
+
+Arrays are stored in contiguous memory locations, meaning the elements are stored one after the other in consecutive memory addresses.
+1. Array Object Creation: When we create an array in java, memory is allocated to hold the elements of the array. The size of the memory block allocated is determined by the type of the elements and the number of elements in the array.
+2. Contiguous Memory Allocation: Arrays in Java store elements in contiguous memory locations. This means that all the elements of the array are stored one after the other in memory. This layout allows for efficient memory access because elements can be accessed using an index calculation.
+3. Base Address: When you create an array, a reference to the array is stored in a variable. This reference points to the memory address of the first element of the array.This memory address is often referred to as the "base address" of the array.
+4. Element Access: Java uses Zero-based indexing, meaning the first element of the array is at index 0, the second element is at index 1 and so on. To access an element of the array, Java calculates the memory address of the desired element using the base address and the index.
+5. Memory layout: The memory layout of an array looks like a contiguous block of memory. For example, if we have an array of integers, each integer will typically occupy 4 bytes.
+6. Multidimensional Arrays: These are arrays of arrays. For example, a 2d array is an array where each element is itself an array . These are stored similarly in memory with each row stored contiguously, and array holding references to these rows.
+7. Garbage Collection: Like other objects in java, arrys are subject to garbage collection. When there is no reference to an array anymore, it becomes eligible for garbage collection, and memory it occupies will be reclaimed by the JVM.
+
+
+Create an Array::
+====================
+When we create an Array, we:
+- Declare - created a reference to array
+- Instantiation of an array- created an array
+- Initialization - assigns values to cells in array
+
+In the first step, in the declaration step the system only will create the reference variable.
+In the Second step. i.e instantiation of array. so when we instantiate an array, the compiler allocates memory for this array.
+And it store the address of the first cell in the reference variable created in first step.
+
+In the last step: Initialization is assigning value. by default the zero or null default values will be assigned based on the datatype.
+
+datatype[] arr ==> Declaration
+arr = new datatype[] ==> Instantiation
+arr[0] =value ==> Initialization
+
+Note::
+
+In Java, when we declare an array variable, we are actually creating a reference to an array object, not the array itself.
+int[] arr =null;
+"arr" is a refernce variable that can point to an array of integers,
+"null" is a special literal in Java that represents a reference that does not point to any object.
+
+In this case "arr" is declared, but it is not pointing to any array object. it is way to say that the array reference is currently not assigned to any array in memory;
+
+Why 'null' and Not '0'?
+
+'arr' is a refernce typr variable, not a primitive type. Reference types can only hold references to object (or 'null'), whereas primitive types hold actual data values.
+'0' is a valid value for primitive numeric types(like 'int',float',etc) but it is not valid value for reference type.
+
+
+Declaration and initialization of array:
+
+dataType[] arrayname = new dataType[arraySize];
+
+dataType is the type of element that array will hold,
+arrayname is the name of the array =
+arraySize is the number of elements in the array
+
+eg:  int[] myarray= new int[5];
+
+
+Declaration : The declaration of an array happens when you specify its type, name.The declaration does not allocate memory for the array
+elements. It simply informs the compiler about the type of elements the array will hold and array's name
+
+int[] myarray // Declaration
+
+Initialization : Initialization involves assigning an actual array object to the declared variable. This os done using the new keyword. and it allocates memory for the aaray elements.
+At this stage, the array is created and its element are initialized to default values(e.g 0 for numeric values and null for objects types)
+
+myarray = new int[5];  // initialization
+
+---------------------------------------------------------------------------------------
+
+In Java, both primitive arrays and objects arrays are stored in the heap memory, not the stack.
+The stack in Java is used for storing local variables and method call information , while the heap is used  for dynamic memory allocation, including objects and arrays.
+
+1. Memory for the array is allocated in the heap
+2. For Primitive arrays, each elements' value is directly stored in the allocated memory.
+3. For objects arrays, each elements is reference to an object. The actual objects themselves are stored in the heap, and the array holds references to these objects.
+4. The reference to the array is stored in a variable, typically on the stack.
+
+Remember that primitive types themselves(like 'int' 'char' etc) can be stored on the stack when they are local variables, method parameters,or fields of objects. However, when you create an array, the memory for the array itself and its elements is allocated in the heap.
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+In Java will the arrays stored in contiguous memory ????
+
+Arrays are designed to store elements in contiguous memory locations. However it's important to note that the specific memory management and allocation are abstracted by the Java Virtual Machine(JVM), and the programmer doesn't have direct control over memory addresses as in languages liek C or C++.
+The JVM handles memory allocation and ensures that arrays are stored in a way that allows for efficient access to elements.
+
+While the contiguous memory storage is a common implementation strategy, it's not required by the Java language specification.
+The Java language specification defines the behaviour and properties of arrays, but it does not mandate a specific implementation. As a result, the JVM may use various techniques for memory management, and as long as the specified behavior is maintained, the actual details of memory storage may vary across different JVM implementations.
+
+In Practical terms, You can treat Java arrays as if they are stored in contiguous memory, and the language guarantees that array elements are accessible through index notation. However, the exact memory management details are left to the JVM's discretion.
+
+
+---------------------------------------------------------------------------------------------
+
+Index : An refers to  a position or a numerical identifier that is used to access elements within a data structure, such as an array, list, or other indexed collections.
+The Index servers as a way to uniquely identify individual elements within the collection
+
+Index start from 0.
+
+
+------------------------------------------------------------------------------------------
+
+Multidimensional Array :
+
+Can be defined in simple words as array of arrays. Data in multidimensional arrays are stored in tabular form(in row major order)
+
+in row major order is a way of storing and traversing elements in a multidimensional array.This means that when we iterate through the elements
+of multidimensional array, you move through the rows first.
+
+
+1. Syntax
+
+datatype[1st dimension][2nd dimension]...[Nth dimension] array_name = new datatype[size1][size2]...[sizeN]
+
+datatype : Type of data to be stored in the array. for example int, char , object
+array_name : name of Array
+size1,,size2,,sizeN : Size of the dimension 
+
+2. Note in Multidimesional array , no of rows is mandatory, no of columns is not mandatory to mention while declaring the array.
+
+
+
+
+
+Time and space Complexity of 1D arrays:
+
+Operation  => Time complexity => Space Complexity
+Creating an empty array => O(1) => O(N)
+Inserting a value in an array => O(1) => O(1)
+Traversing a given array => O(N) => O(1)
+Accessing a given cell => O(1) => O(1)
+Searching a given =>O(N) => O(1)
+Deleting a given value => O(1) => O(1)
+
+Time and space complexity of 2d arrays operation we did:
+
+Creating an empty array =>O(1) => O(MN)
+Inserting a vale in an array => O(1) =>O(1)
+Travesing a given array => O(MN) => O(1)
+Accessing a given cell => O(1) => O(1)
+Searching a given value => O(MN) => O(1)
+Deleting a given value =>O(1) => O(1)
+
+When to Use / Avoid Arrays
+
+When to Use:
+A> To store multiple variables of same data type
+B> Random Access
+
+When to avoid:
+A> Different data type elements
+B> its fixed size if don't use also it still reserves space in memory which a limitations.

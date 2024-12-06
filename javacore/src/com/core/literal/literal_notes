@@ -1,0 +1,23 @@
+Any constant value which can be assigned to the variable is called "Literal/Constant"
+
+1. Integer Literals: These represent whole number(without decimal points)
+a. Decimal (Base 10): Regular numbers eg int x=100
+b. Octal(Base 8): Numbers starting with 0 eg int y=075; represents decimal 61)
+c. Hexadecimal(Base 16): Numbers starting with 0x eg: int 0x1F( represents decimal 31)
+d. Binary (Base 2) : Number starting with 0b or 0B eg int a= 0b1010 (represents decimal 10).
+
+
+2. Floating Point Literals:
+These represent numbers with decimal points or in scientific notation.
+a. Simple Decimal : eg double x= 3.14;
+b. Scientific Notation: eg  double y=1.23e4;(which represents 1.23*10^4)
+
+3. Boolean literals: These represents Logical values
+a. true or false eg: boolean isTrue-=true;
+
+4. Character Literals: These represents character and are enclosed in single quotes.
+Ex: Char c= 'A';
+we can also use escape sequence like '\n' ,'\t' ,'\'' , '\\'
+
+5. String Literals: These are sequence of character enclosed in double quotes.
+Ex: String greetings = "Hello World!!" 

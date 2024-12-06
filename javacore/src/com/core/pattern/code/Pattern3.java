@@ -4,16 +4,16 @@ public class Pattern3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		System.out.println("=======PATTERN 5========");
-//		pattern5(5);
-//		System.out.println("=======PATTERN 6========");
-//		pattern6(6);
-//		System.out.println("=======PATTERN 7========");
-//		pattern7(5);
-//		System.out.println("=======PATTERN 8========");
-//		pattern8(7);
+		System.out.println("=======PATTERN 5========");
+		pattern5(5);
+		System.out.println("=======PATTERN 6========");
+		pattern6(6);
+		System.out.println("=======PATTERN 7========");
+		pattern7(5);
+		System.out.println("=======PATTERN 8========");
+		pattern8(7);
 		
-		pattern9(4);
+		//pattern9(4);
 
 	}
 
@@ -84,21 +84,21 @@ public class Pattern3 {
 		}
 	}
 	
-	static void pattern9(int n) {
-		for(int row =1 ; row<=(2*n)-1; row++){
-			
-			//int colfin = row > n ? 2*n-row-1 : row ; 
-			
-			
-			for(int col=1; col>=(2*n)-1;col++) {
-				
-				System.out.print(col+" ");
-			}
-			
-			System.out.println("\n");
-			
-		}
-	}
+//	static void pattern9(int n) {
+//		for(int row =1 ; row<=(2*n)-1; row++){
+//			
+//			//int colfin = row > n ? 2*n-row-1 : row ; 
+//			
+//			
+//			for(int col=1; col>=(2*n)-1;col++) {
+//				
+//				System.out.print(col+" ");
+//			}
+//			
+//			System.out.println("\n");
+//			
+//		}
+//	}
 // Brute force	
 //	static void pattern8(int n) {
 //		for(int row =1 ; row<=n; row++){

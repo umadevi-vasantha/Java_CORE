@@ -1,0 +1,198 @@
+ArrayList:
+==========
+
+An ArrayList is a resizable array implementation provided by the Java Collections Framework.
+It is a part of the 'java.util' package and provides dynamic arrays in Java that can grow as needed.
+
+It is dynamic, resizable data structure which is the part of java collection framework. it can grow or shrink in size as the elements are added and removed.
+ArrayList is a class that internally uses an array to store its elements, but it automatically handles resizing and provide various useful methods for manipulation.
+
+A real-life Example can be music Play-list in our computer.
+
+
+Array vs ArrayList:
+
+Size:
+===============
+Array :
+Fixed Size, Once created the size of the Array cannot be changed.
+Size must be specified at that of instantiation.
+
+ArrayList:
+Dynamic size: Can grow and shrink as needed.
+No need to specify the size initially.
+
+Performance:
+==============
+Array:
+Faster for fixed-size collections due to less overhead.
+No need for resizing operations.
+
+ArrayList:
+Slightly slower due to the overhead of dynamic resizing and the need to maintain its internal structure.
+
+Flexibility:
+============
+Array:
+Less flexible: Fixed in size and type
+Direct access to elements via indices
+
+ArrayList:
+More flexible: Can change size dynamically and provides various utility methods.
+Offers methods like add(), remove(), contains(), etc.
+
+Type Safety:
+===========
+Array:
+Type-safe at compile time.
+Cannot store different types of elements (except for arrays of type Object).
+
+ArrayList
+Type-safe if using generics.
+Can store different types of elements if not using generics, but this is generally discouraged
+
+
+Primitive Datatypes:
+===================
+Array:
+Can store primitive types directly (e.g., int[], char[]).
+
+ArrayList:
+Cannot store primitive types directly. Must use wrapper classes (e.g., ArrayList<Integer>, ArrayList<Character>).
+
+
+======================================================================================================================================
+
+Certainly! Here is the table in a text format that's easy to copy:
+
+```
+| Feature             | Array                                       | ArrayList                                   |
+|---------------------|---------------------------------------------|---------------------------------------------|
+| **Definition**      | Fixed-size collection of elements           | Resizable array implementation              |
+| **Size**            | Fixed once initialized                      | Dynamic, can grow or shrink                 |
+| **Declaration**     | `int[] array = new int[10];`                | `ArrayList<Integer> list = new ArrayList<>();` |
+|                     | `String[] array = {"a", "b", "c"};`         | `ArrayList<String> list = new ArrayList<>(Arrays.asList("a", "b", "c"));` |
+| **Type**            | Single type, specified at creation          | Single type (generic), can be mixed if not using generics |
+| **Type Safety**     | Type-safe at compile time                   | Type-safe with generics                     |
+| **Primitive Types** | Can store primitives directly               | Stores primitives as wrapper classes        |
+| **Performance**     | Faster due to no resizing overhead          | Slightly slower due to resizing overhead    |
+| **Flexibility**     | Less flexible, fixed size                   | More flexible, dynamic size and many utility methods |
+| **Usage**           | Best for fixed-size collections             | Best for collections with dynamic size      |
+| **Access**          | Direct via index                            | Direct via index with `get(int index)`      |
+| **Modification**    | Direct via index                            | Via methods like `set(int index, E element)` |
+| **Adding Elements** | Not possible to add beyond initial size     | `add(E element)`, `add(int index, E element)` |
+| **Removing Elements**| Not possible to remove                     | `remove(int index)`, `remove(Object o)`     |
+| **Iteration**       | `for` loop, enhanced `for` loop             | `for` loop, enhanced `for` loop, iterator   |
+| **Contains Check**  | Manual implementation                       | `contains(Object o)` method                 |
+| **Initialization**  | Size must be specified at creation or initialized with values | No need to specify initial size             |
+| **Memory**          | Fixed memory allocation                     | Can consume more memory due to dynamic resizing |
+| **Example Access**  | `int num = array[2];`                       | `int num = list.get(2);`                    |
+| **Example Modify**  | `array[2] = 10;`                            | `list.set(2, 10);`                          |
+| **Example Iterate** | `for (int i = 0; i < array.length; i++)`    | `for (int i = 0; i < list.size(); i++)`     |
+|                     | `for (int num : array)`                     | `for (int num : list)`                      |
+```
+
+
+ArrayList in Memory:
+
+Memory Structure:
+1. Initial Capacity and Array:
+When an 'ArrayList' is created, it initializes an internal array to store the elements.
+If no initial capacity is specified, a default capacity(usually 10) is used.
+
+2. Adding Elements:
+As elements are added to the ArrayList they are stored in internal array.
+The size of the 'arraylist' is the number of elements it contains, while the capacity is the size of the internal array.
+
+3.Resizing:
+If the number of elements exceeds the current capacity, the 'ArrayList' needs to resize the internal array.
+Resizing involves:
+a. creating a new array with a larger capacity (typically 1.5 times the current capacity).
+b. Copying the elements from the old array to the new array.
+c. setting the internal array reference to the new array.
+
+This resizing operation can be costly, but it happens infrequently as the array grows exponentially.
+
+ 4. Memory Allocation:
+a.The internal array is stored in the heap memory.
+b. When and ArrayList is resized, the new array is allocated in the heap, and the old array is eventually garbage collected if there are no more references to it.
+
+5. Garbage Collection:
+Elements removed form the 'ArrayList' are dereferenced, making them eligible for garbage collection.
+The internal array is also subject to garbage collection when the 'arraylist' is no longer in use.
+
+
+===========================================================================================================================================
+
+
+Time Complexity in Insertion i.e using add() and add(index, value):
+Appending and Element at the end of the internal array: add()
+Time complexity :O(1)
+1. This method adds an element to the end of the 'ArrayList'
+2. In most cases, this operation is O(1) because it simple places the new element in the next available position in the internal array.
+3. However, if the internal array is full and needs resizing, the operation involves creating a new larger array and copying all elements from the old array to the new array, which is an O(n) operation.
+4. Due to the resizing happening infrequently(as the array grows exponentially), the average time complexity or amortize time complexity of add() remains O(1).
+
+Inserting and Element at a Specific Index: add(int index, E element)
+Time complexity: O(n):
+This method inserts an element at a specified index in the 'ArrayList'.
+All subsequent elements(from the index of insertion to the end of the list) need to be shifted one position to the right to accommodate the new element.
+The shifting of elements involves moving each element, starting from the end of the list to the specified index, one position to the right.
+In the worst case, if the element is inserted at the beginning of the list(index 0), all existing elements need to be shifted, resulting in O(n) operations.
+The time complexity for inserting and element at a specific index is thus O(n), where n is the number of elements in the list.
+
+
+Space complexity :
+1. Appending an element at the end of the array(add(e)):
+Scenario without resizing : If the internal array has sufficient capacity to accommodate the new element, no additional space is needed beyond the element itself.
+The operation simply places the new element in the next available slot.
+Space complexity: O(1) additional space for the new element.
+
+Scenario with Resizing: If the internal array is full, a new larger array is created, and all existing elements are copied to this new array.
+a. Space complexity during resizing: O(n) for creating the new array and copying elements, where 'n' is the current number of elements in the 'arraylist'
+b. Amortized space complexity: the occasional resizing operation's cost is distributed across multiple 'add' operations. Over many operations, the amortized space complexity remains o(1) per operations, since the array doubles in size, ensuring infrequent resizing.
+
+Space Complexity of add(int index, e element)
+2. Inserting an element at a specific index(add(int index, e element)):
+
+Scenario without resizing: If the internal array has sufficient capacity, the space required for the operation includes the new element plus any temporary space for shifting elements. 
+Temporary space for shifting elements: Although elements need to be moved to make space for the new element, this operation is done in place, so it does not require additional space proportional to the number of elements.
+Space complexity: O(1) additional space (just for the new element)
+
+Scenario with resizing: Similar to the add() method if the internal array is full, resizing occurs.
+Space complexity during resizing: O(n) for creating the new array and copyingss elements.
+Amortized space complexity: Similar to the appending case, the amortized space complexity remains O(1) per operation over many insertions due to the doubling strategy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
