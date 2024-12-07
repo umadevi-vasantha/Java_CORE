@@ -1,0 +1,95 @@
+Garbage collection :
+====================
+Garbage collection is an automatic memory management process in java that is responsible for reclaiming memory occupied by objects
+that are no longer reachable or in use by the program.
+The java virtual machine(JVM) automatically handles garbage collection making memory management more convenient for developers and
+reducing the risk of memory leaks.
+
+Memory Management in Java:
+==========================
+
+1.In Java, objects are created dynamically using the 'new' keyword. The JVM allocated memory for these objects in the "heap".
+2. Developers do not explicitly deallocate memory instead the jvm's garbage collector takes care of reclaiming memory.
+
+Heap Memory:
+The heap is the region of memory where objects are allocated. It is managed by the garbage collector.
+
+JVM employs "Generational garbage collection" strategy. which categorized "objects by age".
+
+
+Different classification of objects by Garbage collector:
+
+1.Young Generation
+2.Old Generation
+3.Permanent Generation
+
+
+1. Young Generation : Newly created objects start in the young generation. The garbage collection further subdivides into
+Eden Space, where all new objects start and 2 Survior spaces, where it moves objects from eden after surviving one garbage collection cycle.
+
+When objects are garbage collections from the young generation, it is called "Minor garbage collection event"
+
+2. Old Generation : Eventually, the garbage collector moves the long-lived objects from the Young generation to the Old Generation.
+When the objects are garbage collected from the old generation it is called "Major garbage collection event".
+
+
+3. Permanent Generation: The JVM stores the metadata, such as classes and methods in the permanent generation.
+JVM garbage collects the classes from the permanent generation that are no longer in use.
+
+
+
+Different Types of Garbage Collector:
+a. Serial
+b. Parallel
+c. CMS
+d. GI
+
+a. Serial Collector
+b. Parallel collector
+c. CMS(concurrent Mark and sweep) 
+d. GI (garbage First collector)
+
+
+Trigger for garbage collection?
+
+1. Allocation Failure: When a object cannot be allocated in the heap because there is not enough contagious free space available. the jvm triggers the garbage collection to free up memory.
+2. Heap Size: When the heap size reaches a certain capacity threshold, the JVM triggers garbage collection to reclaim memory and prevent an outofmemoryerror.
+3. Explicit requests: Developer initiated requested for garbage collection.
+4. Time based: some garbage collection algorithm such as GI garbage collection, use time based triggers to initiate garbage collection.
+
+
+Ways to request JVM to RUN garbage collector.
+
+1. System.gc()
+2. Runtime.getRuntime.gc()
+
+Both the method does gaurantee garbage collections.
+
+Finalize method: 
+
+The finalize() method in java is a specified method defined in the object class that is called by the garbage collector
+on an object before it is removed from the memory.
+
+It allows developers to define custom cleanup logic for objects before their memory is reclaimed.
+
+Definition:
+-> protected void finalize() throws Throwable.
+-> declared in the object class
+-> its protected , so it can be overridden by the subclass.
+
+
+Purpose:
+The finalize() method is meant for cleanup operations like closing files releasing database connections, or other resources that the garbage collector does'nt manage.
+
+When its' called:
+- The finalize() method is called at most once on an object, just before garbage collector reclaims it memory.
+- An object becomes eligible for garbage collection when it as no active reference to it.
+
+finalize() is deprecated since Java9 due to unpredictable behavior, performance issues, complexity and risks.
+
+
+
+
+
+
+
