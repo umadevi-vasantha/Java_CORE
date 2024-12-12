@@ -1,4 +1,13 @@
- Primitive Data Types are those which is not further breakable. Primitive types are used to create reference datatypes
+Define Datatype:
+
+A data type in programming defines the type of data that a variable can hold. It specifies the size, range, and operations that can be performed on the data
+
+
+ Primitive Data Types are those which is not further breakable. Primitive types are used to create reference data-types
+ Primitive data types are the most basic types of data in programming. 
+ They are predefined by the language and serve as the building blocks for data manipulation. 
+ In Java, these types are not objects and are directly supported by the language.
+
  
  byte:
  Definition: 8-bit signed integer.
@@ -30,3 +39,32 @@
  
  boolean:
  Definition: Represents true or false.
+ 
+ Primitive data types are the most basic types of data in programming. They are predefined by the language and serve as the building blocks for data manipulation. In Java, these types are not objects and are directly supported by the language.
+
+Characteristics:
+
+They store simple values like numbers, characters, or boolean values.
+They have fixed sizes and are independent of any objects.
+They are stored directly in memory, and their values are not references to memory locations.
+Operations on primitive data types are fast and require little memory.
+They are immutable, meaning their values cannot be changed once they are assigned.
+Examples:
+
+int, float, char, boolean, long, short, byte, double.
+
+Non-Primitive Data Types:
+Non-primitive data types (also known as Reference Types) are more complex than primitive types. These types are used to represent objects or references to objects, and they can store collections of data. Non-primitive types can be further classified into arrays, classes, and interfaces.
+
+Characteristics:
+
+They can store references to data rather than the data itself.
+They are objects, so they have methods and properties that can be accessed and modified.
+Their size is not fixed and depends on the object they reference or the structure of the data.
+Operations on non-primitive types generally take more memory and may be slower due to their complexity.
+They can be mutable or immutable based on the type of object or structure.
+Examples:
+
+String, Array, Class, Interface, Enum, List, Map, Set, etc.
+ 
+ 

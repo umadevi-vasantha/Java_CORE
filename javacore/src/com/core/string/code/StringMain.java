@@ -16,7 +16,7 @@ public class StringMain {
 		String str1= new String();
 		String str2= new String();
 		/*
-		 * As we used new keyword the string is not created in string pool and interning doesn't takes plac.Hence both ref variables str1 and str2 will be 
+		 * As we used new keyword the string is not created in string pool and interning doesn't takes place.Hence both ref variables str1 and str2 will be 
 		 * pointing to 2 differnt objects. we can check that using == operator
 		 *  
 		 */
